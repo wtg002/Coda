@@ -1,0 +1,4325 @@
+<!DOCTYPE html>
+<!AIM Syllabus Search>
+<!Terry Goedken 12/10/15 v1.0 Initial Release
+<!Terry Goedken 12/31/15 v1.01 Changed Homepage instructions
+<!Terry Goedken 1/1/16 v1.1 Allowed Ctrl+V for pasting into search boxes and add 'Sort' by Syllabus order back in to code.
+<!Terry Goedken 1/3/16 v1.11 Changed Syllabus to Repertoire
+<!Terry Goedken 1/5/16 v1.12 Added CODA logo
+<!Terry Goedken 1/12/16 v1.2 Added Collection Period Classification count to Report2
+<!Terry Goedken 1/13/16 v1.3 Changed Item# search to Like X_
+<!Terry Goedken 1/14/16 v1.4 Enabled Copy for Editor or Collection = List
+<!Terry Goedken 1/21/16 v1.41 Change message color to blue
+<!Terry Goedken 2/2/16 v1.5 Added composition "phrase" search terms and OR function
+<!Terry Goedken 2/5/16 v1.6 Allowed copy of results table
+<!Terry Goedken 2/6/16 v1.7 Added auto removal of commas and periods and improved Phrase and OR functions.
+<!Terry Goedken 2/6/16 v1.8 Added Red Item # for items needing comments info during registration.
+<!Terry Goedken 2/7/16 v1.9 Added standardized words and delete of special characters and add space between non-digits and digits
+<!Terry Goedken 2/7/16 v2.0 Fixed multiple spaces in phrase
+<!Terry Goedken 2/15/16 v2.1 Change code to work with Internet Explorer
+<!Terry Goedken 2/16/16 v2.2 Fixed problem with alternative words
+<!Terry Goedken 3/12/16 v2.3 Changed Item# blue color to green and red to blue
+<!Terry Goedken 3/28/16 v2.4 Fixed composition OR search and "x" search
+<!Terry Goedken 3/31/16 v2.41 Added additional alternate spellings and added OrderBy to queries
+<!Terry Goedken 4/3/16 v2.5 changed # of allowed phrases from 3 to 2. delete all quotes after finding 2 phrases. fixed issue with # or ! in quoted phrase. convert op or no plus digits into phrase. convert a-g plus major or minor into phrase. convert single characters into phrase.
+<!Terry Goedken 4/5/16 v2.6 fixed issue with collection item# search. fixed issue with composition |or search. added standard levels terms.
+<!Terry Goedken 4/6/16 v2.7 changed levels query to regex match and updated alternative spellings list.
+<!Terry Goedken 4/8/16 v2.8 Added Composer Editor and Collection drop-down autocomplete.
+<!Terry Goedken 4/11/16 v2.9 Added Collection/Book List All, List Books, List Collections.
+<!Terry Goedken 4/12/16 v3.0 Added rotating coda while searching.
+<!Terry Goedken 4/14/16 v3.1 Added re-search after 0 results.
+<!Terry Goedken 4/15/16 v3.2 Fixed issue with searh terms var declaration and re-ordered re-search.
+<!Terry Goedken 4/16/16 v3.3 Added Options drop-down. Moved Help position. Added Show and Clear last 10 item #s selected. Changed Prompt method.
+<!Terry Goedken 4/17/16 v3.4 Added clear individual saved Item #s.
+<!Terry Goedken 4/18/16 v3.5 Added check for duplicate saved Item #s. Added shift remaining saved Item #s to fill in empties. Added mouseover text. Added -level, level-, and level-level.
+<!Terry Goedken 4/19/16 v3.6 Added mouseover of Select buttons, Blue Item #'s and Syllabus pages. Added coda gif reset. Changed Search button to Continue button during alternate composition searching.
+<!Terry Goedken 4/21/16 v3.7 Changed Collection column width to fixed 300.
+<!Terry Goedken 4/23/16 v3.8 Changed Composition column width to fixed 175. Set Table font to 9. Added Publisher Abbreviation Key to Search Options. Added saved Items messaging.
+<!Terry Goedken 4/26/16 v4.0 Changed reset and search from images to font awesome. Added trim to search inputs.
+<!Terry Goedken 4/27/16 v4.1 Changed Search Options to auto-execute. Added Confirm message for Saved Items List Clear.
+<!Terry Goedken 4/28/16 v4.2 Added links to Item List and Pre-Check. Changed instructional text. Fixed problem with standardized terms capitalization.
+<!Terry Goedken 4/29/16 v4.3 Increased saved search history from 10 to 20.
+<!Terry Goedken 5/1/16 v4.4 Added cookies to save Saved Items List. Fixed problem with Blue Item# title.
+<!Terry Goedken 5/2/16 v4.5 Increased saved item list form 10 to 20.
+
+ 
+<html>
+
+<script>
+    function searchKeyPress(e)
+    {
+        // look for window.event in case event isn't passed in
+        e = e || window.event;
+        if (e.keyCode == 13)
+        {
+            document.getElementById('btnSearch2').click();
+            return false;
+        }
+        return true;
+    }
+
+</script>
+
+
+
+<form>
+    <table>
+        <table border="0"> <!0=no border  1=show border>
+
+        <!Table 1 is 4 rows by 12 columns and contains the AIM Logo, CODA Logo, Help link, Instructions, GIF, Options, Reset icon, BackArrow icon, ForwardArrow icon, Search icon and Message area>
+
+        <tr>
+            <!AIM cover page pic and CODA logo are located on Constant Contact server>
+
+            <!AIM cover page>
+            <td rowspan = "4", 
+                align = "left" 
+                style = "width:70px; 
+                         font-size: 13px;">
+                <a href = "https://docs.google.com/document/d/1IrXaed5MiKjYp-BBgAQNMxHCG4BF2iuBRU2adlf3Zh8/edit?usp=sharing/" target="_blank">
+                <img src = "https://mlsvc01-prod.s3.amazonaws.com/1603e3db001/cd78bda0-efb4-485d-87c4-b773a8810b1f.jpg?ver=1445349525000" 
+                title="Click to see a summary of syllabus repertoire requirements." alt="Picture not found" style = "width:66px; height:88px; float:left;">
+            </td>
+    
+            <!CODA logo>
+            <td 
+                colspan = "1", 
+                align = "left"
+                style = "font-size:11px; 
+                         font-weight: bold;
+                         width:75px;"
+
+                <!"C" of CODA logo>
+                <div id="CODAlogo">
+                <img src = "https://mlsvc01-prod.s3.amazonaws.com/1603e3db001/9bb51079-b2cf-4a03-8140-f3955592e795.jpg?ver=1460482673000" alt="Picture not found" style = "width:14px; height:23px; float:left;">
+                </div>
+
+                <!COPYRIGHT AND SOFTWARE VERSION>
+                <!Coda symbol that rotates once>
+                <div id="CODAlogo2">
+                <img id="coda" src = "https://mlsvc01-prod.s3.amazonaws.com/1603e3db001/3086f23a-a759-4c33-85e6-ea0c76e59e6b.gif" title="© 2016 Terry Goedken software version: 4.5" alt="Picture not found" style = "width:24px; height:24px; float:left;">
+                </div>
+
+                <!Coda symbol that rotates continuously>
+                <div id="CODAlogo3" style="display: none;">
+                <img src = "https://mlsvc01-prod.s3.amazonaws.com/1603e3db001/f5d22352-a0b6-46d8-989d-37e69055c3a5.gif?ver=1460423045000" alt="Picture not found" style = "width:24px; height:24px; float:left;">
+                </div>
+
+                <!"DA" of CODA logo>
+                <div id="CODAlogo4">
+                <img src = "https://mlsvc01-prod.s3.amazonaws.com/1603e3db001/a64a2b6e-7a1c-4098-8f56-6c2325c1f63c-thumbnail.jpg?ver=1460482673000" alt="Picture not found" style = "width:32px; height:23px; float:left;">
+                </div>
+
+            </td>
+
+            <!CODA text>
+            <td 
+                colspan = "5", 
+                align = "left"
+                style = "font-size:11px; 
+                         font-weight: bold;
+                         width:270px;"
+
+                <pre><font color="black"> Compositions Online Database Access</pre>
+            </td>
+
+            <!Empty form cell>
+            <td 
+                colspan = "1", 
+                align = "left"
+                style = "font-size:11px; 
+                         width:85px;"
+            </td>
+
+            <!AIM CODA LIST>
+            <td align = "right"; valign="middle";
+                style = width:100px;">
+
+                <a href="http://www.nwsmta.org/aim-repertoire-item--list.html" target="_blank">
+                    <div id = "codaList">
+                    <span title="Open CODA Item # List.">
+                    <i class="fa fa-list-ul" style="font-size:20px; align:middle; color:black"><font size="2"> Item # List</font></i>
+                    </div>
+                </a>
+            </td>      
+
+            <!AIM Pre-Check Music Icon>
+            <td align = "right"; valign="middle";
+                style = width:100px;">
+
+                <a href="http://www.nwsmta.org/aim-repertoire-pre-check.html" target="_blank">
+                    <div id = "preCheck">
+                    <span title="Open AIM Performance Exam Repertoire Pre-Check.">
+                    <i class="fa fa-check-square-o" style="font-size:20px; align:middle; color:black"><font size="2"> Pre-Check</font></i>
+                    </div>
+                </a>
+            </td>      
+
+            <!Help>
+            <td align ="right"; valign="middle";
+                style = "width:70px">
+                    
+                <a href = "https://docs.google.com/document/d/1IbDoJcbiTXHT0xB7p8HyWVTcqp6ZXiu4UlFKRWpnUaQ/edit?usp=sharing/" target="_blank"><span title="Click for features and instuctions"><i class="fa fa-question-circle" style="font-size:20px; align:middle; color:darkred"><font size="2"> Help</font></i></span>
+                </a>
+            </td>
+
+            <!GIF>
+            <td rowspan = "4"; 
+                align = "right" 
+                style = "width:105px;">
+                <div id="myDIV">
+                <img src= "http://www.animatedimages.org/data/media/378/animated-piano-image-0065.gif" 
+                 style = "height:80px;"/>
+                </div>
+
+            </td>
+        </tr>
+
+        <tr>
+            <!Line 1 of Instructions>
+            <td 
+                colspan = "10", 
+                align = "left" 
+                style = "font-size:12px; 
+                         width:700px;"
+                >All search boxes are optional. ie: Enter Fugue in Composition box and click &#128270; (Search). To mimic the printed syllabus, enter
+            </td>
+        </tr>
+
+        <tr>
+            <!Line 2 of Instructions>
+            <td 
+                colspan = "10", 
+                align = "left"; 
+                style = "font-size:12px; 
+                         width:700px;"
+                >a Level and Syllabus page number. ie: Level: 5, Syllabus: p18. Note: RED Results text contains a link to further information.
+            </td>
+        </tr>
+
+        <tr>
+            <!Search Options>
+            <td colspan = "2", 
+                align = "left"; 
+                style = width:210px
+                title = "Options in BLUE must be selected before clicking Search";>
+                <select id="menopt" onchange="optionSelected()">
+                    <option>Search Options</option>
+                    <option>Show saved Item #'s</option>
+                    <option>Clear all saved Item #'s</option>
+                    <option>List Books and Collections</option>
+                    <option>List Books</option>
+                    <option>List Collections</option>
+                    <option>List Collections by Editor</option>
+                    <option>Publisher Abbreviation Key</option>
+                    <option style="color:blue" >Don't limit results to 999</option>
+                    <option style="color:blue" >Sort like printed syllabus</option>
+                </select>
+            </td>      
+
+            <!Home Reset Icon>
+            <td align = "center"; 
+                style = width:35px;">
+
+                <a href="JavaScript:Reset();" >
+                    <div id = "btnSearch1">
+                    <span title = "Reset">
+                    <i class="fa fa-home" style="font-size:28px; align:middle; color:black"></i>
+                    </div>
+                </a>
+            </td>  
+    
+            <!BackArrow Icon>
+            <td align = "center"; valign="middle";
+                style = width:25px;">
+
+                <a href="JavaScript:arrowBack()";>
+                    <div id="backArrow">    
+                    <span title="Older Searches">
+                    <meta name="viewport" content="width=device-width, initial-scale=1">
+                    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+                    <i class="fa fa-arrow-left" style="font-size:20px; align:middle;"></i>
+                    </div>
+                </a>
+            </td>      
+
+            <!ForwardArrow Icon>
+            <td align = "center"; valign="middle";
+                style = width:25px;">
+
+                <a href="JavaScript:arrowFwd()";>
+                    <div id = "fwdArrow">
+                    <span title="Newer Searches">
+                    <i class="fa fa-arrow-right" style="font-size:20px; align:middle;"></i>
+                    </div>
+                </a>
+            </td>      
+
+            <!MagnifyingGlass Search Icon>
+            <td align = "center"; valign="middle";
+                style = width:35px;">
+
+                <a href="JavaScript:
+                         flag = 0; 
+                         gif = 1; 
+                         show10 = 0;
+                         drawVisualization();" >
+                    <div id = "btnSearch2">
+                    <span title = "Search">
+                    <i class="fa fa-flip-horizontal fa-search" style="font-size:22px; align:middle;"></i>
+                    </div>
+                </a>
+
+            <!MagnifyingGlassPlus Icon>
+                <a href="JavaScript:
+                         flag = 0; 
+                         gif = 1; 
+                         show10 = 0;
+                         drawVisualization();" >
+                    <div id = "btnSearch2+" style="display: none;">
+                    <span title = "Continue modified search">
+                    <i class="fa fa-flip-horizontal fa-search-plus" style="font-size:22px; align:middle;"></i>
+                    </div>
+                </a>
+            </td>
+
+            <!Message>
+            <td colspan = "4", 
+                align = "left" 
+                style = "width:370px;
+                color:blue; 
+                font-size: 12px;"
+                <p id = "message"></p>   
+            </td>
+        </tr>
+    </table>
+
+
+    <table>
+        <table border="0"> <!0=no border  1=show border>
+        <!Table 2 is 3 rows by 7 columns and contains the search boxes: Item#, Level, Composer, Composition, Editor, Collection/Book, Syllablus>
+
+        <tr>
+            <!First row is all empty>
+            <td 
+                align = "left" 
+                style = "font-size: 12px; 
+                         height:0px;"> 
+            </td>
+
+            <td 
+                align = "left" 
+                style = "font-size: 12px; "> 
+            </td>
+
+            <td 
+                align = "left" 
+                style = "font-size: 12px; "> 
+            </td>
+
+            <td 
+                align = "left" 
+                style = "font-size: 12px; "> 
+            </td>
+
+            <td 
+                align = "left" 
+                style = "font-size: 12px; "> 
+            </td>
+
+            <td 
+                align = "left" 
+                style = "font-size: 12px; "> 
+            </td>
+
+            <td 
+                align = "left" 
+                style = "font-size: 12px; "> 
+            </td>
+        </tr>
+
+        <tr>
+            <!Second row is all search boxes>
+            <!Item entry>
+            <td align = "left">
+                <input type = "text"
+                 style = "width:70px;"
+                 id = "item" 
+                 name = "item"  
+                 onkeypress = "return searchKeyPress(event);">
+            </td> 
+
+            <!Level entry>
+            <td align = "left">
+                <input type = "text"
+                 style = "width:160px;" 
+                 id = "level" 
+                 name = "level" 
+                 title = "Separate multiple levels with a space ie: 5 6 7
+Indicate a minimum level with a dash after the level ie: 7-
+Indicate a maximum level with a dash before the level ie: -7
+Indicate a range with a dash between two levels ie: 6-8."
+                 onkeypress = "return searchKeyPress(event);">
+            </td>
+
+            <!Composer entry>
+            <td align = "left">
+                <input type= "text" list = "composers"
+                 style = "width:100px; 
+                 background-color: #e5ffb3; 
+                 border: solid 1px #6E6E6E;
+                 height:18px;"
+                 id = "composer" 
+                 name = "composer" autofocus 
+                 onkeypress = "return searchKeyPress(event);">
+            </td>
+
+            <!Composition entry>
+            <td align = "left">
+                <input type = "text"
+                 style = "width:160px; 
+                 background-color: #e5ffb3; 
+                 border: solid 1px #6E6E6E;
+                 height:18px;"
+                 id = "composition" 
+                 name = "composition" 
+                 title = 'Indicate term1 OR term2 with | between terms. (Shift+\ above Enter key)
+ie: Happy|Merry Farmer (means Happy Farmer or Merry Farmer)
+Indicate an exact match by enclosing one or more terms in quotes ie: "War Dance" '
+                 onkeypress = "return searchKeyPress(event);">
+            </td>
+
+            <!Editor entry>
+            <td align = "left">
+                <input type = "text" list= "editors"
+                 style = "width:70px;"
+                 id = "editor" 
+                 name = "editor" 
+                 onkeypress = "return searchKeyPress(event);">
+            </td>
+
+            <!Collections entry>
+            <td align = "left">
+                <input type = "text" list = "collections"
+                 style = "width:160px;"
+                 id = "collection" 
+                 name = "collection" 
+                 onkeypress = "return searchKeyPress(event);">
+            </td>
+
+            <!Syllabus entry>
+            <td align = "left">
+                <input type = "text"
+                 style = "width:70px;"
+                 id = "syllabus" 
+                 name = "syllabus" 
+                 onkeypress = "return searchKeyPress(event);">
+            </td>
+        </tr>
+
+        <tr>
+            <!Row 3 is all Search box labels>
+            <td> <i class="fa fa-dot-circle-o"><font size="2"> Item #</font></i></td>
+
+            <td title = "2-12, ABCD, Collections
+A=Baroque, B=Classical, C=Romantic, D=Contemporary";> 
+                 <i class="fa fa-sort-amount-desc " ><font size="2"> Level(s)</font></i></td>
+
+            <td> <i class="fa fa-pencil" ><font size="2"> Composer</font></i></td>
+
+            <td> <i class="fa fa-music"><font size="2"> Composition</font></i></td>
+
+            <td> <i class="fa fa-paragraph"><font size="2"> Editor</font></i></td>
+
+            <td> <i class="fa fa-book"><font size="2"> Book / Collection</font></i></td>
+
+            <td <i class="fa fa-file-text-o"><font size="2"> Syllabus</font></i></td>
+
+        </tr>
+    </table>
+</form>
+
+
+<br>
+
+<meta http-equiv = "content-type" content = "text/html; charset=utf-8"/>
+<script type = "text/javascript" src= "http://www.google.com/jsapi"></script>
+<script type = "text/javascript">
+    google.load('visualization', '1', {packages: ['table']});
+</script>
+
+
+<script type = "text/javascript">
+
+    // Declare Global VARiables
+    var rowNum = 0;       // 0: indicates empty results table
+    var gif = 0;          // 0: don't show gif         1: show gif
+    var addColumn = 1;    // 0: don't add column       1: add column
+
+    // Set Sheet URLs
+    var report1Url = 'https://docs.google.com/spreadsheet/tq?key=1sNgehGGkoZ7v7nCq7Qd33DSbcIefFggkKJLfNoaCSVU&gid=602119187&headers=1';
+
+    var report2Url = 'https://docs.google.com/spreadsheet/tq?key=1sNgehGGkoZ7v7nCq7Qd33DSbcIefFggkKJLfNoaCSVU&gid=2051125825&headers=1';
+
+    var listUrl = 'https://docs.google.com/spreadsheet/tq?key=1sNgehGGkoZ7v7nCq7Qd33DSbcIefFggkKJLfNoaCSVU&gid=602119187&headers=1';
+
+    var syllabusUrl = 'https://docs.google.com/spreadsheet/tq?key=1sNgehGGkoZ7v7nCq7Qd33DSbcIefFggkKJLfNoaCSVU&headers=1';
+
+    var a = "";           // composition search term 1 of 7
+    var b = "";           // composition search term 2 of 7
+    var c = "";           // composition search term 3 of 7
+    var d = "";           // composition search term 4 of 7
+    var e = "";           // composition search term 5 of 7
+    var f = "";           // composition search term 6 of 7
+    var g = "";           // composition search term 7 of 7
+
+    var T1 = "";          // composition "phrase" search term 1 of 2
+    var T2 = "";          // composition "phrase" search term 2 of 2
+
+    var N1 = "";          // composition combined search term Op+# or No+# 1 of 7
+    var N2 = "";           // composition combined term Op+# or No+# 2 of 7
+    var N3 = "";           // composition combined term Op+# or No+# 3 of 7
+    var N4 = "";           // composition combined term Op+# or No+# 4 of 7
+    var N5 = "";           // composition combined term Op+# or No+# 5 of 7
+    var N6 = "";           // composition combined term Op+# or No+# 6 of 7
+    var N7 = "";           // composition combined term Op+# or No+# 7 of 7
+
+    var Ta = "";           // composition combined term (a-g)+major or minor 1 of 7
+    var Tb = "";           // composition combined term (a-g)+major or minor 2 of 7
+    var Tc = "";           // composition combined term (a-g)+major or minor 3 of 7
+    var Td = "";           // composition combined term (a-g)+major or minor 4 of 7
+    var Te = "";           // composition combined term (a-g)+major or minor 5 of 7
+    var Tf = "";           // composition combined term (a-g)+major or minor 6 of 7
+    var Tg = "";           // composition combined term (a-g)+major or minor 7 of 7
+
+    var item = "";         // user item input
+    var level = ".*";      // user level input
+    var composer = "";     // user composer input
+    var composition = "";  // user composition input
+    var editor = "";       // user editor input
+    var collection = "";   // user collection input
+    var syllabus = "";     // user syllabus input
+
+    var oldItem = "";        // copy of last item input to determine change
+    var oldLevel = ".*";     // copy of last level input to determine change
+    var oldComposer = "";    // copy of last composer input to determine change
+    var oldComposition = ""; // copy of last composition input to determine change
+    var oldEditor = "";      // copy of last editor input to determine change
+    var oldCollection = "";  // copy of last collection input to determine change
+    var oldSyllabus = "";    // copy of last syllabus input to determine change
+
+    var a2 = "";           // collection search term 1 of 5
+    var b2 = "";           // collection search term 2 of 5
+    var c2 = "";           // collection search term 3 of 5
+    var d2 = "";           // collection search term 4 of 5
+    var e2 = "";           // collection search term 5 of 5
+
+    var Temp = "";         // used to hold a composition term during a modified search
+    var Temp2 = "";        // cleaned composition term for message display
+    var Qflag = 1;         // query counter for modified search
+    var message = "";      // message for display
+    var ReSearch = 0;      // flag 0:no modified search   1:do modified search
+    var nterms = 0;        // number of composition substring terms
+
+    var saved1 = "empty";  // saved item# 1 of 20
+    var saved2 = "empty";  // saved item# 2 of 20
+    var saved3 = "empty";  // saved item# 3 of 20
+    var saved4 = "empty";  // saved item# 4 of 20
+    var saved5 = "empty";  // saved item# 5 of 20
+    var saved6 = "empty";  // saved item# 6 of 20
+    var saved7 = "empty";  // saved item# 7 of 20
+    var saved8 = "empty";  // saved item# 8 of 20
+    var saved9 = "empty";  // saved item# 9 of 20
+    var saved10 = "empty"; // saved item# 10 of 20
+    var saved1 = "empty";  // saved item# 11 of 20
+    var saved2 = "empty";  // saved item# 12 of 20
+    var saved3 = "empty";  // saved item# 13 of 20
+    var saved4 = "empty";  // saved item# 14 of 20
+    var saved5 = "empty";  // saved item# 15 of 20
+    var saved6 = "empty";  // saved item# 16 of 20
+    var saved7 = "empty";  // saved item# 17 of 20
+    var saved8 = "empty";  // saved item# 18 of 20
+    var saved9 = "empty";  // saved item# 19 of 20
+    var saved10 = "empty"; // saved item# 20 of 20
+
+    var item2 = "";        // selected item#
+    var data = "";         // response data table
+    var show10 = 0;        // saved item list flag 0:don't show  1:show
+    var option = "";       // user selection from search option list
+
+    var searchHold20 = ""; // holds forwardArrow search history 20 of 20
+    var searchHold19 = ""; // holds forwardArrow search history 19 of 20
+    var searchHold18 = ""; // holds forwardArrow search history 18 of 20
+    var searchHold17 = ""; // holds forwardArrow search history 17 of 20
+    var searchHold16 = ""; // holds forwardArrow search history 16 of 20
+    var searchHold15 = ""; // holds forwardArrow search history 15 of 20
+    var searchHold14 = ""; // holds forwardArrow search history 14 of 20
+    var searchHold13 = ""; // holds forwardArrow search history 13 of 20
+    var searchHold12 = ""; // holds forwardArrow search history 12 of 20
+    var searchHold11 = ""; // holds forwardArrow search history 11 of 20
+    var searchHold10 = ""; // holds forwardArrow search history 10 of 20
+    var searchHold9 = "";  // holds forwardArrow search history 9 of 20
+    var searchHold8 = "";  // holds forwardArrow search history 8 of 20
+    var searchHold7 = "";  // holds forwardArrow search history 7 of 20
+    var searchHold6 = "";  // holds forwardArrow search history 6 of 20
+    var searchHold5 = "";  // holds forwardArrow search history 5 of 20
+    var searchHold4 = "";  // holds forwardArrow search history 4 of 20
+    var searchHold3 = "";  // holds forwardArrow search history 3 of 20
+    var searchHold2 = "";  // holds forwardArrow search history 2 of 20
+    var searchHold1 = "";  // holds forwardArrow search history 1 of 20
+    var search1 = "@@@@@@";// holds current search terms
+    var search2 = "";      // holds backArrow search history 2 of 20
+    var search3 = "";      // holds backArrow search history 3 of 20
+    var search4 = "";      // holds backArrow search history 4 of 20
+    var search5 = "";      // holds backArrow search history 5 of 20
+    var search6 = "";      // holds backArrow search history 6 of 20
+    var search7 = "";      // holds backArrow search history 7 of 20
+    var search8 = "";      // holds backArrow search history 8 of 20
+    var search9 = "";      // holds backArrow search history 9 of 20
+    var search10 = "";     // holds backArrow search history 10 of 20
+    var search11 = "";     // holds backArrow search history 11 of 20
+    var search12 = "";     // holds backArrow search history 12 of 20
+    var search13 = "";     // holds backArrow search history 13 of 20
+    var search14 = "";     // holds backArrow search history 14 of 20
+    var search15 = "";     // holds backArrow search history 15 of 20
+    var search16 = "";     // holds backArrow search history 16 of 20
+    var search17 = "";     // holds backArrow search history 17 of 20
+    var search18 = "";     // holds backArrow search history 18 of 20
+    var search19 = "";     // holds backArrow search history 19 of 20
+    var search20 = "";     // holds backArrow search history 20 of 20
+
+    var searchFlag = "enabled"; // used to prevent double clicks of search icon
+    var extra = "";        // added composition alternate spellings
+
+    // set Arrows to lightgray
+    document.getElementById("backArrow").style.color = "lightgray";
+    document.getElementById("fwdArrow").style.color = "lightgray";
+
+    checkCookie();
+
+    function Reset()
+    {
+        resetGif('coda');
+
+        // Don't reset saved1-10
+        // Don't reset search1-10
+        // Don't reset searchHold1-10
+
+        // Clear search boxes
+        document.getElementById ("item").value        = "";
+        document.getElementById ("level").value       = "";
+        document.getElementById ("composer").value    = "";
+        document.getElementById ("composition").value = "";
+        document.getElementById ("editor").value      = "";
+        document.getElementById ("collection").value  = "";
+        document.getElementById ("syllabus").value    = "";
+
+        // don't show GIF animation
+        gif = 0;
+        document.getElementById("myDIV").style.display = "none";
+
+        // hide rotating coda
+        document.getElementById("CODAlogo3").style.display = "none";
+
+        // show stationary coda
+        document.getElementById("CODAlogo2").style.display = "block";
+
+        // enable search button
+        searchFlag = "enabled";
+
+        // Display message
+        message = "Ready to Search."; 
+        document.getElementById("message").innerHTML = message;
+
+        // Hide Results Table
+        document.getElementById("visualization").style.display = "none";
+
+        // Put cursor in composer box
+        document.getElementById("composer").focus();
+
+        // reset query flag
+        Qflag = 1;
+
+        // reset variables
+        a = "";
+        b = "";
+        c = "";
+        d = "";
+        e = "";
+        f = "";
+        g = "";
+
+        Ta = ".*";
+        Tb = ".*";
+        Tc = ".*";
+        Td = ".*";
+        Te = ".*";
+        Tf = ".*";
+        Tg = ".*";
+
+        T1 = ".*";
+        T2 = ".*";
+
+        N1 = ".*";
+        N2 = ".*";
+        N3 = ".*";
+        N4 = ".*";
+        N5 = ".*";
+        N6 = ".*";
+        N7 = ".*";
+
+        item = "";
+        level = ".*";
+        composer = "";
+        composition = "";
+        editor = "";
+        collection = "";
+        syllabus = "";
+
+        oldItem = "";
+        oldLevel = ".*";
+        oldComposer = "";
+        oldComposition = "";
+        oldEditor = "";
+        oldCollection = "";
+        oldSyllabus = "";
+
+        a2 = "";
+        b2 = "";
+        c2 = "";
+        d2 = "";
+        e2 = "";
+
+        Temp = "";
+        Temp2 = "";
+        Qflag = 1;
+        ReSearch = 0;
+        nterms = 0;
+        show10 = 0;
+
+        searchFlag = "enabled";
+
+        updateMessage();
+    }  
+
+// ********************************************************************************
+
+    function drawVisualization() 
+    {
+        // check to see if there is a search already in progress
+        if (searchFlag == "disabled")
+        {
+            return;
+        }
+        
+        // start new search. set searchflag to disable another search until finished
+        searchFlag = "disabled";
+
+        // Get User Search Option selection
+        obj = document.getElementById("menopt");
+        option = obj.options[obj.selectedIndex].text;
+
+        // Check if option = Show saved Items but saved1 = empty
+        if (option == "Show saved Item #'s" && saved1 == "empty")
+        {
+            message = "Saved Item List is empty.";
+            updateMessage();
+            searchFlag = "enabled";
+            return;
+        }
+
+        // Check if saved item #s should be cleared
+        if (option == "Clear all saved Item #'s")
+        {
+            // set default message
+            message = "Saved Item List NOT cleared."
+
+            // prompt user to confirm clear of all saved item #s
+            confirmInputClear = confirm("Click OK to CLEAR all saved Item #'s.", item2);
+            
+            // check if user clicked on OK
+            if (confirmInputClear == true)
+            {
+                // clear all saved items
+                document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+                saved1 = "empty"; setCookie("saved1",saved1,365);
+                saved2 = "empty"; setCookie("saved2",saved2,365);
+                saved3 = "empty"; setCookie("saved3",saved3,365);
+                saved4 = "empty"; setCookie("saved4",saved4,365);
+                saved5 = "empty"; setCookie("saved5",saved5,365);
+                saved6 = "empty"; setCookie("saved6",saved6,365);
+                saved7 = "empty"; setCookie("saved7",saved7,365);
+                saved8 = "empty"; setCookie("saved8",saved8,365);
+                saved9 = "empty"; setCookie("saved9",saved9,365);
+                saved10 = "empty"; setCookie("saved10",saved10,365);
+                saved11 = "empty"; setCookie("saved11",saved11,365);
+                saved12 = "empty"; setCookie("saved12",saved12,365);
+                saved13 = "empty"; setCookie("saved13",saved13,365);
+                saved14 = "empty"; setCookie("saved14",saved14,365);
+                saved15 = "empty"; setCookie("saved15",saved15,365);
+                saved16 = "empty"; setCookie("saved16",saved16,365);
+                saved17 = "empty"; setCookie("saved17",saved17,365);
+                saved18 = "empty"; setCookie("saved18",saved18,365);
+                saved19 = "empty"; setCookie("saved19",saved19,365);
+                saved20 = "empty"; setCookie("saved20",saved20,365);
+            
+                message = "Saved Item List cleared.";
+            }
+
+            updateMessage();
+            searchFlag = "enabled";
+            confirmInputCear = "";
+            
+            // check if saved item list was being displayed and should be redrawn
+            if (show10 == 1 && confirmInputClear == true)
+            {
+                show10 = 0;
+                drawVisualization();
+            }
+
+            return;
+        }
+
+
+        // Check if Publisher Abbreviation Key is selected
+        if (option == "Publisher Abbreviation Key")
+        {
+            // show pdf of publisher key
+            window.open ("https://drive.google.com/open?id=0BwT4HVYEBKR8azl2cHRoMHBjN0E");
+            
+            // reset Options dropdown to Search Options
+            document.getElementById("menopt").selectedIndex = 0;
+
+            resetGif('coda');
+
+            // enable search button
+            searchFlag = "enabled";
+
+            return;
+        }      
+
+
+        // check for optionsQuery
+        if (option == "List Books and Collections" || option == "List Books" || option == "List Collections" || option == "List Collections by Editor" || option == "Show saved Item #'s")
+        {
+            optionsQuery();
+            return;
+        }
+
+
+        // Check if option is Show saved Items but list is empty
+        if(option == "Show saved Item #'s" && saved1 == "empty")
+        {
+            message = "Saved Items list is empty.";
+            updateMessage();
+            return;
+        }       
+
+
+        // Get user search criteria inputs from search boxes
+        item        = document.getElementById ("item").value;
+        level       = document.getElementById ("level").value;
+        composer    = document.getElementById ("composer").value;
+        composition = document.getElementById ("composition").value;
+        editor      = document.getElementById ("editor").value;
+        collection  = document.getElementById ("collection").value;
+        syllabus    = document.getElementById ("syllabus").value;
+
+        // set all inputs to lowercase for query
+        item        = item.toLowerCase();
+        level       = level.toLowerCase();
+        composer    = composer.toLowerCase();
+        composition = composition.toLowerCase();
+        editor      = editor.toLowerCase();
+        collection  = collection.toLowerCase();
+        syllabus    = syllabus.toLowerCase();
+
+        // trim spaces from beginning and end
+        item        = item.trim();
+        level       = level.trim();
+        composer    = composer.trim();
+        composition = composition.trim();
+        editor      = editor.trim();
+        collection  = collection.trim();
+        syllabus    = syllabus.trim();
+
+
+        // Check if all search boxes are empty and no Options are selected
+        if(item == "" && level == "" && composer == "" && composition == "" && editor == "" && collection == "" && syllabus == "" && (option == "Search Options")) 
+        {
+            Reset();
+            return;
+        }       
+
+        // Check if report is requested
+        if (item == "report1" || item == "report2")
+        {
+            optionsQuery();
+            return;
+        }
+
+
+        // check to see if any user input has changed
+        if (composition!=oldComposition || item!=oldItem || level!=oldLevel || composer!=oldComposer || editor!=oldEditor || collection!=oldCollection || syllabus!=oldSyllabus)
+        {
+            Qflag = 1;
+            Temp = "";
+            oldComposition = composition;
+            oldItem = item;
+            oldLevel = level;
+            oldComposer = composer;
+            oldEditor = editor;
+            oldCollection = collection;
+            oldSyllabus = syllabus;
+
+            // if search terms are new, save and shuffle old searches
+            if(search1 != item+"@"+level+"@"+composer+"@"+composition+"@"+editor+"@"+collection+"@"+syllabus)
+            {
+                searchHold20 = "";
+                searchHold19 = "";
+                searchHold18 = "";
+                searchHold17 = "";
+                searchHold16 = "";
+                searchHold15 = "";
+                searchHold14 = "";
+                searchHold13 = "";
+                searchHold12 = "";
+                searchHold11 = "";
+                searchHold10 = "";
+                searchHold9 = "";
+                searchHold8 = "";
+                searchHold7 = "";
+                searchHold6 = "";
+                searchHold5 = "";
+                searchHold4 = "";
+                searchHold3 = "";
+                searchHold2 = "";
+                searchHold1 = "";
+
+                search20 = search19;
+                search19 = search18;
+                search18 = search17;
+                search17 = search16;
+                search16 = search15;
+                search15 = search14;
+                search14 = search13;
+                search13 = search12;
+                search12 = search11;
+                search11 = search10;
+                search10 = search9;
+                search9 = search8;
+                search8 = search7;
+                search7 = search6;
+                search6 = search5;
+                search5 = search4;
+                search4 = search3;
+                search3 = search2;
+                search2 = search1;
+
+                search1 = item+"@"+level+"@"+composer+"@"+composition+"@"+editor+"@"+collection+"@"+syllabus;
+            }
+
+            setArrowColor();
+
+
+// alert("10H:"+searchHold10+" 9H:"+searchHold9+" 8H:"+searchHold8+" 7H:"+searchHold7+" 6H:"+searchHold6+" 5H:"+searchHold5+" 4H:"+searchHold4+" 3H:"+searchHold3+" 2H:"+searchHold2+" 1H:"+searchHold1+" 1S:"+search1+" 2S:"+search2+" 3S:"+search3+" 4S:"+search4+" 5S:"+search5+" 6S:"+search6+" 7S:"+search7+" 8S:"+search8+" 9S:"+search9+" 10S:"+search10);
+        }
+
+        if (gif == 1)
+        { 
+            // Show the GIF animation
+            document.getElementById("myDIV").style.display = "block";
+
+            // Change message
+            message = "Searching.....";
+            document.getElementById("message").innerHTML = message;
+
+            // hide stationary coda
+            document.getElementById("CODAlogo2").style.display = "none";
+
+            // show rotating coda
+            document.getElementById("CODAlogo3").style.display = "block";
+        }
+
+        // reset "phrase" terms
+        Ta = ".*";
+        Tb = ".*";
+        Tc = ".*";
+        Td = ".*";
+        Te = ".*";
+        Tf = ".*";
+        Tg = ".*";
+
+        T1 = ".*";
+        T2 = ".*";
+
+        N1 = ".*";
+        N2 = ".*";
+        N3 = ".*";
+        N4 = ".*";
+        N5 = ".*";
+        N6 = ".*";
+        N7 = ".*";
+
+
+        // Remove commas and periods
+        composition = composition.replace(/\./gi,"");
+        composition = composition.replace(/,/gi,"");
+
+        // Replace composition words with standardized words
+        composition = composition.replace(/opus/gi,"op");
+        composition = composition.replace(/number/gi,"no");
+        composition = composition.replace(/1st/gi,"first");
+        composition = composition.replace(/2nd/gi,"second");
+        composition = composition.replace(/3rd/gi,"third");
+        composition = composition.replace(/mvts/gi,"movement");
+        composition = composition.replace(/mvt/gi,"movement");
+        composition = composition.replace(/volume/gi,"vol");
+        composition = composition.replace(/posthumous/gi,"post");
+
+        // Replace a to g-flat (with or without a hyphen) with ab, bb, cb etc
+        composition = composition.replace(/\b([a-g])[-]?flat/gi,'"$1b"');
+
+        // Remove special characters ( ) [ ] ^ $ ? * + - '
+        composition = composition.replace(/\(|\)|\[|\]|\^|\$|\?|\*|\+|-|\'/gi,"");
+
+        // replace multiple spaces with one
+        composition = composition.replace(/\s+/g," "); 
+
+        // remove quotes around an |or inside a phrase
+        composition = composition.replace(/\"\|/g,"|"); 
+        composition = composition.replace(/\" \|/g,"|"); 
+        composition = composition.replace(/\|\"/g,"|"); 
+        composition = composition.replace(/\| \"/g,"|"); 
+
+        // Remove space around |OR
+        composition = composition.replace(/ \|/gi,"|");
+        composition = composition.replace(/\| /gi,"|");
+
+        // check #1 for composition phrase text
+        var start1 = composition.indexOf('"');
+        if (start1 >=0)
+        {
+            var end1 = composition.indexOf('"',start1+1);
+            T1 = composition.substring(start1,end1+1);
+
+            // separate phrase
+            composition = composition.replace(T1,"");
+
+            // replace multiple spaces with one
+            composition = composition.replace(/\s+/g," "); 
+
+            // add \.* to listed terms
+            T1 = T1.replace(/Anh|B|BI|BWV|D|G|H|Hob|K|Kv|L|No|Nos|Op|S|Sz|Vol|WoO|Wq|Z|ZT/gi, function myFunction(x){return x+"\\.*";});
+            
+            // remove quotes from phrase
+            T1 = T1.replace(/"/g,"");
+
+            // adds OR function in phrase
+            T1 = T1.replace(/\|/g,"\\b.*|.*\\b");
+
+            // replace multiple spaces with one
+            T1 = T1.replace(/\s+/g," ");
+            T1 = ".*\\b"+T1+"\\b.*";
+
+            // # and ! do not match word boundary
+            T1 = T1.replace(/#\\b/g,"#\\B");
+            T1 = T1.replace(/!\\b/g,"!\\B");
+        }
+
+        // check #2 for composition phrase text
+        var start2 = composition.indexOf('"');
+        if (start2 >=0)
+        {
+            var end2   = composition.indexOf('"',start2+1);
+            T2 = composition.substring(start2,end2+1);
+            composition = composition.replace(T2,""); 
+            composition = composition.replace("  "," ");
+
+            T2 = T2.replace(/Anh|B|BI|BWV|D|G|H|Hob|K|Kv|L|No|Nos|Op|S|Sz|Vol|WoO|Wq|Z|ZT/gi, function myFunction(x){return x+"\\.*";});
+
+            T2 = T2.replace(/"/g,"");
+            T2 = T2.replace(/\|/g,"\\b.*|.*\\b");
+            T2 = T2.replace(/\s+/g," ");
+            T2 = ".*\\b"+T2+"\\b.*";
+            T2 = T2.replace(/#\\b/g,"#\\B");
+            T2 = T2.replace(/!\\b/g,"!\\B");
+        }
+
+        // Limit number of Terms to 2 by removing all remaining quotes
+        composition = composition.replace(/\"/g,"");
+
+        // Add space between letters and digits
+        composition = composition.replace(/([a-z])(?=[0-9])/gi,'$1 ');
+
+        // Add alternate spellings
+        extra = "";
+        composition2 = composition;
+
+
+        // Add alternate spellings
+        // # does not work with \b
+        // There is a beginning formula, a middle formula and an ending formula for each group
+        if (composition.search(/\bsharp\b/)>=0 || composition.search(/#/)>=0)
+        {
+            extra = "sharp | # + ";
+            composition = composition.replace(/\bsharp\b/gi,"#");
+            composition = composition.replace(/#/gi,"sharp|# ");
+
+            if (composition2.search(/\bsharp\b/)>=0)
+            {
+                extra = extra.replace(/\bsharp\b \| /gi,"");
+            }
+
+            if (composition2.search(/#/)>=0)
+            {
+                extra = extra.replace(/ \| #/gi,"");
+            }
+        }
+
+        if (composition.search(/\bminuet\b/)>=0 || composition.search(/\bmenuet\b/)>=0)
+        {
+            extra = "minuet | menuet + ";
+            composition = composition.replace(/\bminuet\b/gi,"menuet");
+            composition = composition.replace(/\bmenuet\b/gi,"minuet|menuet");
+
+            if (composition2.search(/\bminuet\b/)>=0)
+            {
+                extra = extra.replace(/\bminuet\b \| /gi,"");
+            }
+
+            if (composition2.search(/\bmenuet\b/)>=0)
+            {
+                extra = extra.replace(/( \| )?\bmenuet\b/gi,"");
+            }
+        }
+
+
+        if (composition.search(/\bjig\b/)>=0 || composition.search(/\bjigg\b/)>=0 || composition.search(/\bgiga\b/)>=0 || composition.search(/\bgigue\b/)>=0)
+        {
+            extra = extra+"jigg | jig | giga | gigue + ";
+            composition = composition.replace(/\bjigg\b/gi,"gigue");
+            composition = composition.replace(/\bjig\b/gi,"gigue");
+            composition = composition.replace(/\bgiga\b/gi,"gigue");
+            composition = composition.replace(/\bgigue\b/gi,"jigg|jig|giga|gigue");
+
+            if (composition2.search(/\bjigg\b/)>=0)
+            {
+                extra = extra.replace(/\bjigg\b \| /gi,"");
+            }
+
+            if (composition2.search(/\bjig\b/)>=0)
+            {
+                extra = extra.replace(/\bjig\b( \| )?/gi,"");
+            }
+
+            if (composition2.search(/\bgiga\b/)>=0)
+            {
+                extra = extra.replace(/\bgiga\b( \| )?/gi,"");
+            }
+
+            if (composition2.search(/\bgigue\b/)>=0)
+            {
+                extra = extra.replace(/( \| )?\bgigue\b/gi,"");
+            }
+        }
+
+        if (composition.search(/\bwaltz\b/)>=0 || composition.search(/\bvalse\b/)>=0 || composition.search(/\bvals\b/)>=0 || composition.search(/\bwalzer\b/)>=0)
+        {
+            extra = extra+"waltz | valse | walzer | vals + "
+            composition = composition.replace(/\bwaltz\b/gi,"vals");
+            composition = composition.replace(/\bvalse\b/gi,"vals");
+            composition = composition.replace(/\bwalzer\b/gi,"vals");
+            composition = composition.replace(/\bvals\b/gi,"waltz|valse|walzer|vals");
+
+            if (composition2.search(/\bwaltz\b/)>=0)
+            {
+                extra = extra.replace(/\bwaltz\b \| /gi,"");
+            }
+
+            if (composition2.search(/\bvalse\b/)>=0)
+            {
+                extra = extra.replace(/\bvalse\b( \| )?/gi,"");
+            }
+
+            if (composition2.search(/\bwalzer\b/)>=0)
+            {
+                extra = extra.replace(/\bwalzer\b( \| )?/gi,"");
+            }
+
+            if (composition2.search(/\bvals\b/)>=0)
+            {
+                extra = extra.replace(/( \| )?\bvals\b/gi,"");
+            }
+        }
+
+        if (composition.search(/\bdanse\b/)>=0 || composition.search(/\bdanza\b/)>=0 || composition.search(/\bdance\b/)>=0)
+        {
+            extra = extra+"danse | danza | dance + "
+            composition = composition.replace(/\bdanse\b/gi,"dance");
+            composition = composition.replace(/\bdanza\b/gi,"dance");
+            composition = composition.replace(/\bdance\b/gi,"danse|danza|dance");
+
+            if (composition2.search(/\bdanse\b/)>=0)
+            {
+                extra = extra.replace(/\bdanse\b \| /gi,"");
+            }
+
+            if (composition2.search(/\bdanza\b/)>=0)
+            {
+                extra = extra.replace(/\bdanza\b( \| )?/gi,"");
+            }
+
+            if (composition2.search(/\bdance\b/)>=0)
+            {
+                extra = extra.replace(/( \| )?\bdance\b/gi,"");
+            }
+        }
+
+        if (composition.search(/\bfantasia\b/)>=0 || composition.search(/\bfantasie\b/)>=0 || composition.search(/\bfantasy\b/)>=0)
+        {
+            extra = extra+"fantasia | fantasie | fantasy + "
+            composition = composition.replace(/\bfantasia\b/gi,"fantasy");
+            composition = composition.replace(/\bfantasie\b/gi,"fantasy");
+            composition = composition.replace(/\bfantasy\b/gi,"fantasia|fantasie|fantasy");
+
+            if (composition2.search(/\bfantasia\b/)>=0)
+            {
+                extra = extra.replace(/\bfantasia\b \| /gi,"");
+            }
+
+            if (composition2.search(/\bfantasie\b/)>=0)
+            {
+                extra = extra.replace(/\bfantasie\b( \| )?/gi,"");
+            }
+
+            if (composition2.search(/\bfantasy\b/)>=0)
+            {
+                extra = extra.replace(/( \| )?\bfantasy\b/gi,"");
+            }
+        }
+
+        if (composition.search(/\bmelodie\b/)>=0 || composition.search(/\bmelody\b/)>=0)
+        {
+            extra = extra+"melodie | melody + "
+            composition = composition.replace(/\bmelodie\b/gi,"melody");
+            composition = composition.replace(/\bmelody\b/gi,"melodie|melody");
+
+            if (composition2.search(/\bmelodie\b/)>=0)
+            {
+                extra = extra.replace(/\bmelodie\b \| /gi,"");
+            }
+
+            if (composition2.search(/\bmelody\b/)>=0)
+            {
+                extra = extra.replace(/( \| )?\bmelody\b/gi,"");
+            }
+        }
+
+        if (composition.search(/\banglaise\b/)>=0 || composition.search(/\benglish\b/)>=0)
+        {
+            extra = extra+"anglaise | english + "
+            composition = composition.replace(/\banglaise\b/gi,"english");
+            composition = composition.replace(/\benglish\b/gi,"anglaise|english");
+
+            if (composition2.search(/\banglaise\b/)>=0)
+            {
+                extra = extra.replace(/\banglaise\b \| /gi,"");
+            }
+
+            if (composition2.search(/\benglish\b/)>=0)
+            {
+                extra = extra.replace(/( \| )?\benglish\b/gi,"");
+            }
+        }
+
+        if (composition.search(/\bbouree\b/)>=0 || composition.search(/\bbourree\b/)>=0)
+        {
+            extra = extra+"bouree | bourree + "
+            composition = composition.replace(/\bbouree\b/gi,"bourree");
+            composition = composition.replace(/\bbourree\b/gi,"bouree|bourree");
+
+            if (composition2.search(/\bbouree\b/)>=0)
+            {
+                extra = extra.replace(/\bbouree\b \| /gi,"");
+            }
+
+            if (composition2.search(/\bbourree\b/)>=0)
+            {
+                extra = extra.replace(/( \| )?\bbourree\b/gi,"");
+            }
+        }
+
+        if (composition.search(/\bromance\b/)>=0 || composition.search(/\bromanze\b/)>=0)
+        {
+            extra = extra+"romance | romanze + "
+            composition = composition.replace(/\bromance\b/gi,"romanze");
+            composition = composition.replace(/\bromanze\b/gi,"romance|romanze");
+
+            if (composition2.search(/\bromance\b/)>=0)
+            {
+                extra = extra.replace(/\bromance\b \| /gi,"");
+            }
+
+            if (composition2.search(/\bromanze\b/)>=0)
+            {
+                extra = extra.replace(/( \| )?\bromanze\b/gi,"");
+            }
+        }
+
+        if (composition.search(/\bgavotta\b/)>=0 || composition.search(/\bgavotte\b/)>=0)
+        {
+            extra = extra+"gavotta | gavotte + "
+            composition = composition.replace(/\bgavotta\b/gi,"gavotte");
+            composition = composition.replace(/\bgavotte\b/gi,"gavotta|gavotte");
+
+            if (composition2.search(/\bgavotta\b/)>=0)
+            {
+                extra = extra.replace(/\bgavotta\b \| /gi,"");
+            }
+
+            if (composition2.search(/\bgavotte\b/)>=0)
+            {
+                extra = extra.replace(/( \| )?\bgavotte\b/gi,"");
+            }
+        }
+
+        if (composition.search(/\bbourlesq\b/)>=0 || composition.search(/\bburleska\b/)>=0 || composition.search(/\bburlesca\b/)>=0 || composition.search(/\bburleske\b/)>=0 || composition.search(/\bburlesque\b/)>=0)
+        {
+            extra = extra+"bourlesq | burleska | burlesca | burleske | burlesque + ";
+            composition = composition.replace(/\bbourlesq\b/gi,"burlesque");
+            composition = composition.replace(/\bburleska\b/gi,"burlesque");
+            composition = composition.replace(/\bburlesca\b/gi,"burlesque");
+            composition = composition.replace(/\bburleske\b/gi,"burlesque");
+            composition = composition.replace(/\bburlesque\b/gi,"bourlesq|burleska|burlesca|burleske|burlesque");
+
+            if (composition2.search(/\bbourlesq\b/)>=0)
+            {
+                extra = extra.replace(/\bbourlesq\b \| /gi,"");
+            }
+
+            if (composition2.search(/\bburleska\b/)>=0)
+            {
+                extra = extra.replace(/\bburleska\b( \| )?/gi,"");
+            }
+
+            if (composition2.search(/\bburlesca\b/)>=0)
+            {
+                extra = extra.replace(/\bburlesca\b( \| )?/gi,"");
+            }
+
+            if (composition2.search(/\bburleske\b/)>=0)
+            {
+                extra = extra.replace(/\bburleske\b( \| )?/gi,"");
+            }
+
+            if (composition2.search(/\bburlesque\b/)>=0)
+            {
+                extra = extra.replace(/( \| )?\bburlesque\b/gi,"");
+            }
+        }
+
+        if (composition.search(/\bfuga\b/)>=0 || composition.search(/\bfugue\b/)>=0)
+        {
+            extra = extra+"fuga | fugue + "
+            composition = composition.replace(/\bfuga\b/gi,"fugue");
+            composition = composition.replace(/\bfugue\b/gi,"fuga|fugue");
+
+            if (composition2.search(/\bfuga\b/)>=0)
+            {
+                extra = extra.replace(/\bfuga\b \| /gi,"");
+            }
+
+            if (composition2.search(/\bfugue\b/)>=0)
+            {
+                extra = extra.replace(/( \| )?\bfugue\b/gi,"");
+            }
+        }
+
+        if (composition.search(/\bpraeludium\b/)>=0 || composition.search(/\bprelude\b/)>=0)
+        {
+            extra = extra+"praeludium | prelude + "
+            composition = composition.replace(/\bpraeludium\b/gi,"prelude");
+            composition = composition.replace(/\bprelude\b/gi,"praeludium|prelude");
+
+            if (composition2.search(/\bpraeludium\b/)>=0)
+            {
+                extra = extra.replace(/\bpraeludium\b \| /gi,"");
+            }
+
+            if (composition2.search(/\bprelude\b/)>=0)
+            {
+                extra = extra.replace(/( \| )?\bprelude\b/gi,"");
+            }
+        }
+
+        if (composition.search(/\brondeaux\b/)>=0 || composition.search(/\brondo\b/)>=0)
+        {
+            extra = extra+"rondeaux | rondo + "
+            composition = composition.replace(/\brondeaux\b/gi,"rondo");
+            composition = composition.replace(/\brondo\b/gi,"rondeaux|rondo");
+
+            if (composition2.search(/\brondeaux\b/)>=0)
+            {
+                extra = extra.replace(/\brondeaux\b \| /gi,"");
+            }
+
+            if (composition2.search(/\brondo\b/)>=0)
+            {
+                extra = extra.replace(/( \| )?\brondo\b/gi,"");
+            }
+        }
+
+        if (composition.search(/\bintermezzo\b/)>=0 || composition.search(/\bintermezzi\b/)>=0)
+        {
+            extra = extra+"intermezzo | intermezzi + "
+            composition = composition.replace(/\bintermezzo\b/gi,"intermezzi");
+            composition = composition.replace(/\bintermezzi\b/gi,"intermezzo|intermezzi");
+
+            if (composition2.search(/\bintermezzo\b/)>=0)
+            {
+                extra = extra.replace(/\bintermezzo\b \| /gi,"");
+            }
+
+            if (composition2.search(/\bintermezzi\b/)>=0)
+            {
+                extra = extra.replace(/( \| )?\bintermezzi\b/gi,"");
+            }
+        }
+
+        if (composition.search(/\bsonatine\b/)>=0 || composition.search(/\bsonatina\b/)>=0)
+        {
+            extra = extra+"sonatine | sonatina + "
+            composition = composition.replace(/\bsonatine\b/gi,"sonatina");
+            composition = composition.replace(/\bsonatina\b/gi,"sonatine|sonatina");
+
+            if (composition2.search(/\bsonatine\b/)>=0)
+            {
+                extra = extra.replace(/\bsonatine\b \| /gi,"");
+            }
+
+            if (composition2.search(/\bsonatina\b/)>=0)
+            {
+                extra = extra.replace(/( \| )?\bsonatina\b/gi,"");
+            }
+        }
+
+        if (composition.search(/\bcorant\b/)>=0 || composition.search(/\bcorrente\b/)>=0 || composition.search(/\bcourante\b/)>=0)
+        {
+            extra = extra+"corant | corrente | courante + "
+            composition = composition.replace(/\bcorant\b/gi,"courante");
+            composition = composition.replace(/\bcorrente\b/gi,"courante");
+            composition = composition.replace(/\bcourante\b/gi,"corant|corrente|courante");
+
+            if (composition2.search(/\bcorant\b/)>=0)
+            {
+                extra = extra.replace(/\bcorant\b \| /gi,"");
+            }
+
+            if (composition2.search(/\bcorrente\b/)>=0)
+            {
+                extra = extra.replace(/\bcorrente\b( \| )?/gi,"");
+            }
+
+            if (composition2.search(/\bcourante\b/)>=0)
+            {
+                extra = extra.replace(/( \| )?\bcourante\b/gi,"");
+            }
+        }
+
+        if (composition.search(/\bouverture\b/)>=0 || composition.search(/\boverture\b/)>=0)
+        {
+            extra = extra+"ouverture | overture + "
+            composition = composition.replace(/\bouverture\b/gi,"overture");
+            composition = composition.replace(/\boverture\b/gi,"ouverture|overture");
+
+            if (composition2.search(/\bouverture\b/)>=0)
+            {
+                extra = extra.replace(/\bouverture\b \| /gi,"");
+            }
+
+            if (composition2.search(/\boverture\b/)>=0)
+            {
+                extra = extra.replace(/( \| )?\boverture\b/gi,"");
+            }
+        }
+
+        if (composition.search(/\bhumoresque\b/)>=0 || composition.search(/\bhumoreske\b/)>=0)
+        {
+            extra = extra+"humoresque | humoreske + "
+            composition = composition.replace(/\bhumoresque\b/gi,"humoreske");
+            composition = composition.replace(/\bhumoreske\b/gi,"humoresque|humoreske");
+
+            if (composition2.search(/\bhumoresque\b/)>=0)
+            {
+                extra = extra.replace(/\bhumoresque\b \| /gi,"");
+            }
+
+            if (composition2.search(/\bhumoreske\b/)>=0)
+            {
+                extra = extra.replace(/( \| )?\bhumoresque\b/gi,"");
+            }
+        }
+
+        if (composition.search(/\brumanian\b/)>=0 || composition.search(/\bromanian\b/)>=0)
+        {
+            extra = extra+"rumanian | romanian + "
+            composition = composition.replace(/\brumanian\b/gi,"romanian");
+            composition = composition.replace(/\bromanian\b/gi,"rumanian|romanian");
+
+            if (composition2.search(/\brumanian\b/)>=0)
+            {
+                extra = extra.replace(/\brumanian\b \| /gi,"");
+            }
+
+            if (composition2.search(/\bromanian\b/)>=0)
+            {
+                extra = extra.replace(/( \| )?\bromanian\b/gi,"");
+            }
+        }
+
+
+        // Break Composition search term into substrings
+        var csplit = composition.split(" ");
+
+        // Determine how many Composition substrings were created
+        nterms = csplit.length;
+
+        // Clear Composition substring variables
+        a = "";
+        b = ""; 
+        c = ""; 
+        d = ""; 
+        e = ""; 
+        f = ""; 
+        g= "";
+
+        var a2 = ""; 
+        var b2 = ""; 
+        var c2 = ""; 
+        var d2 = ""; 
+        var e2 = ""; 
+        var f2 = ""; 
+        var g2 = "";
+
+        var a3 = ""; 
+        var b3 = ""; 
+        var c3 = ""; 
+        var d3 = ""; 
+        var e3 = ""; 
+        var f3 = ""; 
+        var g3 = "";
+        
+        // Limit number of Composition substrings to 7
+        if (nterms > 7) 
+        {
+            nterms = 7;
+        }
+
+        // Put Composition substrings into variables from split array
+        if (nterms >= 1)
+        {
+            a = csplit [0];
+            var aCheck = a.indexOf("|");
+            if (aCheck >=0)
+            {
+                // adds OR function in phrase
+                Ta = a.replace(/\|/g,".*|.*");
+                Ta = ".*"+Ta+".*";
+                a = "";
+            }
+
+            // combine a-g with major or minor
+            else if (/[a-g]/.test(a) && a.length==1 && (csplit[1] == "major" || csplit[1] == "minor"))
+            {
+                Ta = ".*\\b"+a+"."+csplit[1]+"\\b.*";
+                a = ""; csplit [1] = "";
+            }
+
+            // put word boundaries around single characters or digits
+            else if (a.length==1)
+            {
+                Ta = ".*\\b"+a+"\\b.*";
+                a = "";
+            }
+
+            // combine op or no with following digits
+            if ((a=="op" || a=="no") && (/^\d+$/.test(csplit[1])))
+            {
+                N1 = ".*\\b"+a+".."+csplit[1]+"\\b.*";
+                a = ""; csplit [1] = "";
+            }
+        }
+
+        if (nterms >= 2)
+        {
+            b = csplit [1];
+            var bCheck = b.indexOf('|');
+            if (bCheck >=0)
+            {
+                Tb = b.replace(/\|/g,".*|.*");
+                Tb = ".*"+Tb+".*";
+                b = "";
+            }
+
+            else if (/[a-g]/.test(b) && b.length==1 && (csplit[2] == "major" || csplit[2] == "minor"))
+            {
+                Tb = ".*\\b"+b+"."+csplit[2]+"\\b.*";
+                b = ""; csplit[2] = "";
+            }
+
+            // put word boundaries around single characters or digits
+            else if (b.length==1)
+            {
+                Tb = ".*\\b"+b+"\\b.*";
+                b = "";
+            }
+
+            if ((b=="op" || b=="no") && (/^\d+$/.test(csplit[2])))
+            {
+                N2 = ".*\\b"+b+".."+csplit[2]+"\\b.*";
+                b = ""; csplit[2] = "";
+            }
+        }
+
+        if (nterms >= 3)
+        {
+            c = csplit [2];
+            var cCheck = c.indexOf('|');
+            if (cCheck >=0)
+            {
+                Tc = c.replace(/\|/g,".*|.*");
+                Tc = ".*"+Tc+".*";
+                c = "";
+            }
+
+            else if (/[a-g]/.test(c) && c.length==1 && (csplit[3] == "major" || csplit[3] == "minor"))
+            {
+                Tc = ".*\\b"+c+"."+csplit[3]+"\\b.*";
+                c = ""; csplit[3] = "";
+            }
+
+            // put word boundaries around single characters or digits
+            else if (c.length==1)
+            {
+                Tc = ".*\\b"+c+"\\b.*";
+                c = "";
+            }
+
+            if ((c=="op" || c=="no") && (/^\d+$/.test(csplit[3])))
+            {
+                N3 = ".*\\b"+c+".."+csplit[3]+"\\b.*";
+                c = ""; csplit[3] = "";
+            }
+        }
+
+        if (nterms >= 4)
+        {
+            d = csplit [3];
+            var dCheck = d.indexOf('|');
+            if (dCheck >=0)
+            {
+                Td = d.replace(/\|/g,".*|.*");
+                Td = ".*"+Td+".*";
+                d = "";
+            }
+
+            else if (/[a-g]/.test(d) && d.length==1 && (csplit[4] == "major" || csplit[4] == "minor"))
+            {
+                Td = ".*\\b"+d+"."+csplit[4]+"\\b.*";
+                d = ""; csplit[4] = "";
+            }
+
+            // put word boundaries around single characters or digits
+            else if (d.length==1)
+            {
+                Td = ".*\\b"+d+"\\b.*";
+                d = "";
+            }
+
+            if ((d=="op" || d=="no") && (/^\d+$/.test(csplit[4])))
+            {
+                N4 = ".*\\b"+d+".."+csplit[4]+"\\b.*";
+                d = ""; csplit[4] = "";
+            }
+        }
+
+        if (nterms >= 5)
+        {
+            e = csplit [4];
+            var eCheck = e.indexOf('|');
+            if (eCheck >=0)
+            {
+                Te = e.replace(/\|/g,".*|.*");
+                Te = ".*"+Te+".*";
+                e = "";
+            }
+
+            else if (/[a-g]/.test(e) && e.length==1 && (csplit[5] == "major" || csplit[5] == "minor"))
+            {
+                Te = ".*\\b"+e+"."+csplit[5]+"\\b.*";
+                e = ""; csplit[5] = "";
+            }
+
+            // put word boundaries around single characters or digits
+            else if (e.length==1)
+            {
+                Te = ".*\\b"+e+"\\b.*";
+                e = "";
+            }
+
+            if ((e=="op" || e=="no") && (/^\d+$/.test(csplit[5])))
+            {
+                N5 = ".*\\b"+e+".."+csplit[5]+"\\b.*";
+                e = ""; csplit[5] = "";
+            }
+        }
+
+        if (nterms >= 6)
+        {
+            f = csplit [5];
+            var fCheck = f.indexOf('|');
+            if (fCheck >=0)
+            {
+                Tf = f.replace(/\|/g,".*|.*");
+                Tf = ".*"+Tf+".*";
+                f = "";
+            }
+
+            else if (/[a-g]/.test(f) && f.length==1 && (csplit[6] == "major" || csplit[6] == "minor"))
+            {
+                Tf = ".*\\b"+f+"."+csplit[6]+"\\b.*";
+                f = ""; csplit[6] = "";
+            }
+
+            // put word boundaries around single characters or digits
+            else if (f.length==1)
+            {
+                Tf = ".*\\b"+f+"\\b.*";
+                f = "";
+            }
+
+            if ((f=="op" || f=="no") && (/^\d+$/.test(csplit[6])))
+            {
+                N6 = ".*\\b"+f+".."+csplit[6]+"\\b.*";
+                f = ""; csplit[6] = "";
+            }
+        }
+
+        if (nterms == 7)
+        {
+            g = csplit [6];
+            var gCheck = g.indexOf('|');
+            if (gCheck >=0)
+            {
+                Tg = g.replace(/\|/g,".*|.*");
+                Tg = ".*"+Tg+".*";
+                g = "";
+            }
+
+            // put word boundaries around single characters or digits
+            else if (g.length==1)
+            {
+                Tg = ".*\\b"+g+"\\b.*";
+                g = "";
+            }
+        }
+
+        // Break Collection search term into substrings
+        var csplit2 = collection.split(" ");
+
+        // Determine how many Collection substrings were created
+        var nterms2 = csplit2.length;
+
+        // Limit number of Collection substrings to 5
+        if (nterms2 > 5) 
+        {
+            nterms2 = 5;
+        }
+
+        // Put Collection substrings into variables from split array
+        if (nterms2 >= 1)
+        {
+            a2 = csplit2 [0];
+        }
+
+        if (nterms2 >= 2)
+        {
+            b2 = csplit2 [1];
+        }
+
+        if (nterms2 >= 3)
+        {
+            c2 = csplit2 [2];
+        }
+
+        if (nterms2 >= 4)
+        {
+            d2 = csplit2 [3];
+        }
+
+        if (nterms2 >= 5)
+        {
+            e2 = csplit2 [4];
+        }
+
+        if (nterms2 >= 6)
+        {
+            f2 = csplit2 [5];
+        }
+
+        if (nterms2 == 7)
+        {
+            g2 = csplit2 [6];
+        }
+ 
+
+        // check for level-level
+        level = level.replace(/2-12/g,"2 3 4 5 6 7 8 9 10 11 12");
+        level = level.replace(/3-12/g,"3 4 5 6 7 8 9 10 11 12");
+        level = level.replace(/4-12/g,"4 5 6 7 8 9 10 11 12");
+        level = level.replace(/5-12/g,"5 6 7 8 9 10 11 12");
+        level = level.replace(/6-12/g,"6 7 8 9 10 11 12");
+        level = level.replace(/7-12/g,"7 8 9 10 11 12");
+        level = level.replace(/8-12/g,"8 9 10 11 12");
+        level = level.replace(/9-12/g,"9 10 11 12");
+        level = level.replace(/10-12/g,"10 11 12");
+        level = level.replace(/11-12/g,"11 12");
+        level = level.replace(/12-12/g,"12");
+
+        level = level.replace(/2-11/g,"2 3 4 5 6 7 8 9 10 11");
+        level = level.replace(/3-11/g,"3 4 5 6 7 8 9 10 11");
+        level = level.replace(/4-11/g,"4 5 6 7 8 9 10 11");
+        level = level.replace(/5-11/g,"5 6 7 8 9 10 11");
+        level = level.replace(/6-11/g,"6 7 8 9 10 11");
+        level = level.replace(/7-11/g,"7 8 9 10 11");
+        level = level.replace(/8-11/g,"8 9 10 11");
+        level = level.replace(/9-11/g,"9 10 11");
+        level = level.replace(/10-11/g,"10 11");
+        level = level.replace(/11-11/g,"11");
+
+        level = level.replace(/2-10/g,"2 3 4 5 6 7 8 9 10");
+        level = level.replace(/3-10/g,"3 4 5 6 7 8 9 10");
+        level = level.replace(/4-10/g,"4 5 6 7 8 9 10");
+        level = level.replace(/5-10/g,"5 6 7 8 9 10");
+        level = level.replace(/6-10/g,"6 7 8 9 10");
+        level = level.replace(/7-10/g,"7 8 9 10");
+        level = level.replace(/8-10/g,"8 9 10");
+        level = level.replace(/9-10/g,"9 10");
+        level = level.replace(/10-10/g,"10");
+
+        level = level.replace(/2-9/g,"2 3 4 5 6 7 8 9");
+        level = level.replace(/3-9/g,"3 4 5 6 7 8 9");
+        level = level.replace(/4-9/g,"4 5 6 7 8 9");
+        level = level.replace(/5-9/g,"5 6 7 8 9");
+        level = level.replace(/6-9/g,"6 7 8 9");
+        level = level.replace(/7-9/g,"7 8 9");
+        level = level.replace(/8-9/g,"8 9");
+        level = level.replace(/9-9/g,"9");
+
+        level = level.replace(/2-8/g,"2 3 4 5 6 7 8");
+        level = level.replace(/3-8/g,"3 4 5 6 7 8");
+        level = level.replace(/4-8/g,"4 5 6 7 8");
+        level = level.replace(/5-8/g,"5 6 7 8");
+        level = level.replace(/6-8/g,"6 7 8");
+        level = level.replace(/7-8/g,"7 8");
+        level = level.replace(/8-8/g,"8");
+
+        level = level.replace(/2-7/g,"2 3 4 5 6 7");
+        level = level.replace(/3-7/g,"3 4 5 6 7");
+        level = level.replace(/4-7/g,"4 5 6 7");
+        level = level.replace(/5-7/g,"5 6 7");
+        level = level.replace(/6-7/g,"6 7");
+        level = level.replace(/7-7/g,"7");
+
+        level = level.replace(/2-6/g,"2 3 4 5 6");
+        level = level.replace(/3-6/g,"3 4 5 6");
+        level = level.replace(/4-6/g,"4 5 6");
+        level = level.replace(/5-6/g,"5 6");
+        level = level.replace(/6-6/g,"6");
+
+        level = level.replace(/2-5/g,"2 3 4 5");
+        level = level.replace(/3-5/g,"3 4 5");
+        level = level.replace(/4-5/g,"4 5");
+        level = level.replace(/5-5/g,"5");
+
+        level = level.replace(/2-4/g,"2 3 4");
+        level = level.replace(/3-4/g,"3 4");
+        level = level.replace(/4-4/g,"4");
+
+        level = level.replace(/2-3/g,"2 3");
+        level = level.replace(/3-3/g,"3");
+
+        // check for level-
+        level = level.replace(/2-/g,"2 3 4 5 6 7 8 9 10 11 12");
+        level = level.replace(/3-/g,"3 4 5 6 7 8 9 10 11 12");
+        level = level.replace(/4-/g,"4 5 6 7 8 9 10 11 12");
+        level = level.replace(/5-/g,"5 6 7 8 9 10 11 12");
+        level = level.replace(/6-/g,"6 7 8 9 10 11 12");
+        level = level.replace(/7-/g,"7 8 9 10 11 12");
+        level = level.replace(/8-/g,"8 9 10 11 12");
+        level = level.replace(/9-/g,"9 10 11 12");
+        level = level.replace(/10-/g,"10 11 12");
+        level = level.replace(/11-/g,"11 12");
+        level = level.replace(/12-/g,"12");
+
+        // check for -level
+        level = level.replace(/-12/g,"");
+        level = level.replace(/-11/g,"2abcd 3 4 5 6 7 8 9 10 11");
+        level = level.replace(/-10/g,"2abcd 3 4 5 6 7 8 9 10");
+        level = level.replace(/-9/g,"2abcd 3 4 5 6 7 8 9");
+        level = level.replace(/-8/g,"2abcd 3 4 5 6 7 8");
+        level = level.replace(/-7/g,"2abcd 3 4 5 6 7");
+        level = level.replace(/-6/g,"2abcd 3 4 5 6");
+        level = level.replace(/-5/g,"2abcd 3 4 5");
+        level = level.replace(/-4/g,"2abcd 3 4");
+        level = level.replace(/-3/g,"2abcd 3");
+        level = level.replace(/-2/g,"2abcd");
+       
+        // standardize level search terms
+        level = level.replace(/\b2[abcd]*\b/g,"2abcd 2collections");
+        level = level.replace(/\b2\b/g,"2abcd 2collections");
+
+        level = level.replace(/3ab\b/g,"3a");
+        level = level.replace(/3[ab]\b/g,"3ab 3collectionsa 3collectionsb");
+        level = level.replace(/3cd\b/g,"3c");
+        level = level.replace(/3[cd]\b/g,"3cd 3collectionsc 3collectionsd");
+
+        level = level.replace(/([4-8])([a])\b/g,"$1a $1collectionsa");
+        level = level.replace(/([4-8])([b])\b/g,"$1b $1collectionsb");
+        level = level.replace(/4cd\b/g,"4c");
+        level = level.replace(/([4-8])([cd])\b/g,"$1cd $1collectionsc $1collectionsd");
+
+        level = level.replace(/9a\b/g,"9a 9collectionsa");
+        level = level.replace(/9b\b/g,"9b 9collectionsb");
+        level = level.replace(/9c\b/g,"9c 9collectionsc");
+        level = level.replace(/9d\b/g,"9d 9collectionsd");
+
+        level = level.replace(/10a\b/g,"10a 10collectionsa");
+        level = level.replace(/10b\b/g,"10b 10collectionsb");
+        level = level.replace(/10c\b/g,"10c 10collectionsc");
+        level = level.replace(/10d\b/g,"10d 10collectionsd");
+
+        level = level.replace(/11a\b/g,"11a");
+        level = level.replace(/11b\b/g,"11b");
+        level = level.replace(/11c\b/g,"11c");
+        level = level.replace(/11d\b/g,"11d");
+
+        level = level.replace(/12a\b/g,"12a");
+        level = level.replace(/12b\b/g,"12b");
+        level = level.replace(/12c\b/g,"12c");
+        level = level.replace(/12d\b/g,"12d");
+
+        level = level.replace(/^c\b/g,"cd sc 9c 0c 1c 2c");
+
+
+        // replace spaces with |or
+        level = level.replace(/\s+/g,".*|.*");
+        level = ".*"+level+".*";
+
+        // alert(level);
+
+        // set flag for don't add radio button column
+        addColumn = 0;
+
+        // Get Option value
+        var obj = document.getElementById("menopt");
+        option = obj.options[obj.selectedIndex].text;
+ 
+        // Set Query to Perform
+        if (option == "Don't limit results to 999")
+        {
+            //  no limit to number of results returned
+            addColumn = 1; // set flag to add radio button column
+            var query = new google.visualization.Query(syllabusUrl);
+
+            query.setQuery ('select A,B,C,D,E,F,G,I,J,L where lower(B)matches"'+level+'"and lower(C)contains"'+composer+'"and lower(D)contains"'+a+'"and lower(D)contains"'+b+'"and lower(D)contains"'+c+'"and lower(D)contains"'+d+'"and lower(D)contains"'+e+'"and lower(D)contains"'+f+'"and lower(D)contains"'+g+'"and lower(D) matches"'+T1+'"and lower(D)matches"'+T2+'"and lower(D)matches"'+N1+'"and lower(D)matches"'+N2+'"and lower(D)matches"'+N3+'"and lower(D)matches"'+N4+'"and lower(D)matches"'+N5+'"and lower(D)matches"'+N6+'"and lower(D)matches"'+N7+'"and lower(D)matches"'+Ta+'"and lower(D)matches"'+Tb+'"and lower(D)matches"'+Tc+'"and lower(D)matches"'+Td+'"and lower(D)matches"'+Te+'"and lower(D)matches"'+Tf+'"and lower(D)matches"'+Tg+'"and lower(E)contains"'+editor+'"and lower(F)contains"'+a2+'"and lower(F)contains"'+b2+'"and lower(F)contains"'+c2+'"and lower(F)contains"'+d2+'"and lower(F)contains"'+e2+'"and lower(G)contains"'+syllabus+'" order by G,B,C,D,E,F');  
+        }
+
+        else if (option == "Sort like printed syllabus")
+        {
+            // Sort by syllabus page order (column K) and don't limit number of results
+            addColumn = 1; // set flag to add radio button column
+            var query = new google.visualization.Query(syllabusUrl);
+
+            query.setQuery ('select A,B,C,D,E,F,G,I,J,L where lower(B)matches"'+level+'"and lower(C)contains"'+composer+'"and lower(D)contains"'+a+'"and lower(D)contains"'+b+'"and lower(D)contains"'+c+'"and lower(D)contains"'+d+'"and lower(D)contains"'+e+'"and lower(D)contains"'+f+'"and lower(D)contains"'+g+'"and lower(D) matches"'+T1+'"and lower(D)matches"'+T2+'"and lower(D)matches"'+N1+'"and lower(D)matches"'+N2+'"and lower(D)matches"'+N3+'"and lower(D)matches"'+N4+'"and lower(D)matches"'+N5+'"and lower(D)matches"'+N6+'"and lower(D)matches"'+N7+'"and lower(D)matches"'+Ta+'"and lower(D)matches"'+Tb+'"and lower(D)matches"'+Tc+'"and lower(D)matches"'+Td+'"and lower(D)matches"'+Te+'"and lower(D)matches"'+Tf+'"and lower(D)matches"'+Tg+'"and lower(E)contains"'+editor+'"and lower(F)contains"'+a2+'"and lower(F)contains"'+b2+'"and lower(F)contains"'+c2+'"and lower(F)contains"'+d2+'"and lower(F)contains"'+e2+'"and lower(G)contains"'+syllabus+'" order by G,K');  
+        }
+
+        else if (item != "")
+        {   // replace xx or xa or xb or xc or xd with x_ for wild character
+            var modItemX = item.replace("xx", "x_");
+            var modItemA = item.replace("xa", "x_");
+            var modItemB = item.replace("xb", "x_");
+            var modItemC = item.replace("xc", "x_");
+            var modItemD = item.replace("xd", "x_");
+  
+            var query = new google.visualization.Query(syllabusUrl);
+            query.setQuery ('select A,B,C,D,E,F,G,I,J,L where upper(A) like upper("'+modItemX+'") or upper(A) like upper("'+modItemA+'") or upper(A) like upper("'+modItemB+'") or upper(A) like upper("'+modItemC+'") or upper(A) like upper("'+modItemD+'")');
+        } 
+
+        else
+        {
+            //  limit number of results returned to 999
+            addColumn = 1; // set flag to add radio button column
+            ReSearch = 1 // set flag to allow re-searching if no results
+            var query = new google.visualization.Query(syllabusUrl);
+query.setTimeout(60);
+
+// alert("level="+level+" composer="+composer+" a="+a+" b="+b+" c="+c+" d="+d+" e="+e+" f="+f+" g="+g+" Ta="+Ta+" Tb="+Tb+" Tc="+Tc+" Td="+Td+" Te="+Te+" Tf="+Tf+" Tg="+Tg+" T1="+T1+" T2="+T2+" N1="+N1+" N2="+N2+" N3="+N3+" N4="+N4+" N5="+N5+" N6="+N6+" N7="+N7+" syllabus="+syllabus+" Qflag="+Qflag);
+
+            query.setQuery ('select A,B,C,D,E,F,G,I,J,L where lower(B)matches"'+level+'"and lower(C)contains"'+composer+'"and lower(D)contains"'+a+'"and lower(D)contains"'+b+'"and lower(D)contains"'+c+'"and lower(D)contains"'+d+'"and lower(D)contains"'+e+'"and lower(D)contains"'+f+'"and lower(D)contains"'+g+'"and lower(D) matches"'+T1+'"and lower(D)matches"'+T2+'"and lower(D)matches"'+N1+'"and lower(D)matches"'+N2+'"and lower(D)matches"'+N3+'"and lower(D)matches"'+N4+'"and lower(D)matches"'+N5+'"and lower(D)matches"'+N6+'"and lower(D)matches"'+N7+'"and lower(D)matches"'+Ta+'"and lower(D)matches"'+Tb+'"and lower(D)matches"'+Tc+'"and lower(D)matches"'+Td+'"and lower(D)matches"'+Te+'"and lower(D)matches"'+Tf+'"and lower(D)matches"'+Tg+'"and lower(E)contains"'+editor+'"and lower(F)contains"'+a2+'"and lower(F)contains"'+b2+'"and lower(F)contains"'+c2+'"and lower(F)contains"'+d2+'"and lower(F)contains"'+e2+'"and lower(G)contains"'+syllabus+'" order by G,B,C,D,E,F limit 999');  
+        }
+
+        // Send the query with a callback function.
+        query.send(handleQueryResponse);
+
+
+    }  // End function DrawVisualization
+
+// *********************************************************************************
+
+    function handleQueryResponse(response) 
+    {
+        if (response.isError()) 
+        {
+            alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+            return;
+        } 
+
+        data = response.getDataTable();
+
+        // Get number of results found from query
+        var numRows = response.getDataTable().getNumberOfRows();
+        var resultRows = numRows;
+
+        if (ReSearch == 1)
+        {
+            if (numRows == 0 && Qflag <= 22 && nterms >=2)
+            {
+                document.getElementById("message").style.color="red";
+                document.getElementById("btnSearch2").style.display = "none";
+                document.getElementById("btnSearch2+").style.color = "red";
+                document.getElementById("btnSearch2+").style.display = "inline";
+
+                // Query without terms g-a (normal search terms)
+                if (Qflag == 1)
+                {
+                    Temp = g;
+                    g = "";
+                    if (Temp == "") {Qflag = 2}
+                }
+
+                if (Qflag == 2)
+                {
+                    g = Temp;
+                    Temp = Tg;
+                    Tg = ".*";
+                    if (Temp == ".*") {Qflag = 3}
+                }
+
+                if (Qflag == 3)
+                {
+                    Tg = Temp;
+                    Temp = N7;
+                    N7 = ".*";
+                    if (Temp == ".*") {Qflag = 4}
+                }
+
+                if (Qflag == 4)
+                {
+                    N7 = Temp;
+                    Temp = f;
+                    f = "";
+                    if (Temp == "") {Qflag = 5}
+                }
+
+                if (Qflag == 5)
+                {
+                    f = Temp;
+                    Temp = Tf;
+                    Tf = ".*";
+                    if (Temp == ".*") {Qflag = 6}
+                }
+
+                if (Qflag == 6)
+                {
+                    Tf = Temp;
+                    Temp = N6;
+                    N6 = ".*";
+                    if (Temp == ".*") {Qflag = 7}
+                }
+
+                if (Qflag == 7)
+                {
+                    N6 = Temp;
+                    Temp = e;
+                    e = "";
+                    if (Temp == "") {Qflag = 8}
+                }
+
+                if (Qflag == 8)
+                {
+                    e = Temp;
+                    Temp = Te;
+                    Te = ".*";
+                    if (Temp == ".*") {Qflag = 9}
+                }
+
+                if (Qflag == 9)
+                {
+                    Te = Temp;
+                    Temp = N5;
+                    N5 = ".*";
+                    if (Temp == ".*") {Qflag = 10}
+                }
+
+                if (Qflag == 10)
+                {
+                    N5 = Temp;
+                    Temp = d;
+                    d = "";
+                    if (Temp == "") {Qflag = 11}
+                }
+
+                if (Qflag == 11)
+                {
+                    d = Temp;
+                    Temp = Td;
+                    Td = ".*";
+                    if (Temp == ".*") {Qflag = 12}
+                }
+
+                if (Qflag == 12)
+                {
+                    Td = Temp;
+                    Temp = N4;
+                    N4 = ".*";
+                    if (Temp == ".*") {Qflag = 13}
+                }
+
+                if (Qflag == 13)
+                {
+                    N4 = Temp;
+                    Temp = c;
+                    c = "";
+                    if (Temp == "") {Qflag = 14}
+                }
+
+                if (Qflag == 14)
+                {
+                    c = Temp;
+                    Temp = Tc;
+                    Tc = ".*";
+                    if (Temp == ".*") {Qflag = 15}
+                }
+
+                if (Qflag == 15)
+                {
+                    Tc = Temp;
+                    Temp = N3;
+                    N3 = ".*";
+                    if (Temp == ".*") {Qflag = 16}
+                }
+
+                if (Qflag == 16)
+                {
+                    N3 = Temp;
+                    Temp = b;
+                    b = "";
+                    if (Temp == "") {Qflag = 17}
+                }
+
+                if (Qflag == 17)
+                {
+                    b = Temp;
+                    Temp = Tb;
+                    Tb = ".*";
+                    if (Temp == ".*") {Qflag = 18}
+                }
+
+                if (Qflag == 18)
+                {
+                    Tb = Temp;
+                    Temp = N2;
+                    N2 = ".*";
+                    if (Temp == ".*") {Qflag = 19}
+                }
+
+                if (Qflag == 19)
+                {
+                    N2 = Temp;
+                    Temp = a;
+                    a = "";
+                    if (Temp == "") {Qflag = 20}
+                }
+
+                if (Qflag == 20)
+                {
+                    a = Temp;
+                    Temp = Ta;
+                    Ta = ".*";
+                    if (Temp == ".*") {Qflag = 21}
+                }
+
+                if (Qflag == 21)
+                {
+                    Ta = Temp;
+                    Temp = N1;
+                    N1 = ".*";
+                }
+
+                if (Qflag == 22)
+                {
+                    N1 = Temp;
+                    Temp = "";
+                }
+
+// alert("Temp="+Temp+" level="+level+" composer="+composer+" a="+a+" b="+b+" c="+c+" d="+d+" e="+e+" f="+f+" g="+g+" Ta="+Ta+" Tb="+Tb+" Tc="+Tc+" Td="+Td+" Te="+Te+" Tf="+Tf+" Tg="+Tg+" T1="+T1+" T2="+T2+" N1="+N1+" N2="+N2+" N3="+N3+" N4="+N4+" N5="+N5+" N6="+N6+" N7="+N7+" syllabus="+syllabus+" Qflag="+Qflag); 
+
+                var query = new google.visualization.Query(syllabusUrl);
+                query.setTimeout(60);
+
+                query.setQuery ('select A,B,C,D,E,F,G,I,J,L where lower(B)matches"'+level+'"and lower(C)contains"'+composer+'"and lower(D)contains"'+a+'"and lower(D)contains"'+b+'"and lower(D)contains"'+c+'"and lower(D)contains"'+d+'"and lower(D)contains"'+e+'"and lower(D)contains"'+f+'"and lower(D)contains"'+g+'"and lower(D) matches"'+T1+'"and lower(D)matches"'+T2+'"and lower(D)matches"'+N1+'"and lower(D)matches"'+N2+'"and lower(D)matches"'+N3+'"and lower(D)matches"'+N4+'"and lower(D)matches"'+N5+'"and lower(D)matches"'+N6+'"and lower(D)matches"'+N7+'"and lower(D)matches"'+Ta+'"and lower(D)matches"'+Tb+'"and lower(D)matches"'+Tc+'"and lower(D)matches"'+Td+'"and lower(D)matches"'+Te+'"and lower(D)matches"'+Tf+'"and lower(D)matches"'+Tg+'"and lower(E)contains"'+editor+'"and lower(F)contains"'+a2+'"and lower(F)contains"'+b2+'"and lower(F)contains"'+c2+'"and lower(F)contains"'+d2+'"and lower(F)contains"'+e2+'"and lower(G)contains"'+syllabus+'" order by G,B,C,D,E,F limit 999');  
+
+                // Send the query with a callback function.
+                Qflag = Qflag+1;
+                query.send(handleQueryResponse);return;
+
+            } // end if no results 
+        
+        ReSearch = 0
+
+        } // end ReSearch
+
+        else
+        {
+            Qflag = 1;
+        }
+
+        if (Qflag >= 23)
+        {
+            Qflag = 1
+        }
+
+        // Get Options
+        var obj = document.getElementById("menopt");
+        var option = obj.options[obj.selectedIndex].text;
+
+        if (resultRows >= 999 && option != "Don't limit results to 999" && option != "Sort like printed syllabus")
+        {
+            resultRows = "999+"
+        }
+    
+        if (numRows != 0) // If results found, show Table
+        {
+            document.getElementById("visualization").style.display = "block";
+        }
+
+        else // else hide table 
+        {
+            document.getElementById("visualization").style.display = "none";
+        }
+
+        // remove . * \b from Temp2
+        var Temp2 = Temp.replace(/\./g," ");
+        Temp2 = Temp2.replace(/\*/g,"");
+        Temp2 = Temp2.replace(/\\b/g,"");
+
+        if (show10==1)
+        {
+            message = "Showing Saved Item #'s.";
+        }
+
+        else if (Temp2 != "" && Temp2 != " " && resultRows == 1)
+        {
+            document.getElementById("btnSearch2").style.display = "none";
+            document.getElementById("btnSearch2+").style.color = "red";
+            document.getElementById("btnSearch2+").style.display = "inline";
+
+            Temp2Upper = Temp2.toUpperCase();
+
+            document.getElementById("message").style.color="red";
+            message = resultRows+" Result (Missing: "+Temp2Upper.strike()+") Click &#128270; to continue.";
+        }
+
+        else if (Temp2 != "" && Temp2 != " ")
+        {
+            document.getElementById("btnSearch2").style.display = "none";
+            document.getElementById("btnSearch2+").style.color = "red";
+            document.getElementById("btnSearch2+").style.display = "inline";
+
+            Temp2Upper = Temp2.toUpperCase();
+
+            document.getElementById("message").style.color="red";
+            message = resultRows+" Results (Missing: "+Temp2Upper.strike()+") Click &#128270; to continue.";
+        }
+
+        else if (resultRows == 1)
+        {
+            // set search icon color to black
+            document.getElementById("btnSearch2+").style.display = "none";
+            document.getElementById("btnSearch2").style.color = "black";
+            document.getElementById("btnSearch2").style.display = "inline";
+
+            document.getElementById("message").style.color="blue";
+            message = "Your Search Found "+resultRows+" Result.";
+
+            if (extra != "" && extra != " + ")
+            {
+                extraUpper = extra.toUpperCase();
+                extraUpper = extraUpper.slice(0,-2);
+                message = resultRows+" Result (Included: "+extraUpper+")";
+                extra = "";
+            }
+        }
+
+        else
+        {
+            // set search icon color to black
+            document.getElementById("btnSearch2+").style.display = "none";
+            document.getElementById("btnSearch2").style.color = "black";
+            document.getElementById("btnSearch2").style.display = "inline";
+
+            document.getElementById("message").style.color="blue";
+            message = "Your Search Found "+resultRows+" Results."; 
+
+            if (extra != "" && extra != " + ")
+            {
+                extraUpper = extra.toUpperCase();
+                extraUpper = extraUpper.slice(0,-2);
+                message = resultRows+" Results (Included: "+extraUpper+")";
+                extra = "";
+            }
+            
+        }
+
+        document.getElementById("message").innerHTML = message;
+
+        var numCols = response.getDataTable().getNumberOfColumns();
+ 
+        // if link column was returned and there are results
+        if (numCols > 7 && item != "report2" && numRows != 0)  
+        { 
+            addColumn = 1;  // then add radio button column  
+              
+            // check each row for composition link text
+            for (var row = 0; row < numRows; row++) 
+            { 
+                var link = data.getValue(row,7);  // Get contents of column [7]
+                  
+                if (link != "") // If Link text found
+                {   
+                    // get Composition text from column [3]
+                    var target = data.getValue(row,3);
+
+                    // Combine link with composition text and put in column [3]
+                    data.setCell(row,3,'<a title="Click to see more information" href= "' + link + '"target = _blank>' + target + '</a>');
+                }  
+            }  
+
+            // check each row for syllabus link text
+            for (var row = 0; row < numRows; row++) 
+            { 
+                var link2 = data.getValue(row,8);  // Get contents of column [8]
+                  
+                if (link2 != "") // If Link2 text found
+                {   
+                    // get Syllabus text from column [6]
+                    var target2 = data.getValue(row,6);
+
+                    // Combine link2 with syllabus text and put in column [6]
+                    data.setCell(row,6,'<a title ="Click to open a pdf of the printed syllabus page." href= "' + link2 + '"target = _blank>' + target2 + ' </a>');
+                }  
+            }     
+        }     
+
+        // Hide the GIF
+        document.getElementById("myDIV").style.display = "none";
+        document.getElementById("CODAlogo3").style.display = "none"; // hide rotating coda
+        document.getElementById("CODAlogo2").style.display = "block"; // show stationary coda
+
+        // Re-enable Search button
+        searchFlag = "enabled";
+
+        // Reset Options dropdown to Options
+        document.getElementById("menopt").selectedIndex = 0;
+
+
+        visualization = new google.visualization.Table(document.getElementById('visualization'));
+
+        if (numRows != 0)
+        {
+            // report1
+            visualization.draw(data, {allowHtml: true, frozenColumns:0 });
+        }
+
+        if (addColumn == 1)
+        { 
+            data.insertColumn(0,'string', 'Select');  // insert radio button column
+
+            // add radio button into each row
+            for (var rowat = 0; rowat < numRows; rowat++)
+            {
+                data.setProperty(rowat, 0, 'style', 'text-align: center;');
+                data.setProperty(rowat, 3, 'style', 'font-size:9pt; text-align: left;');
+                data.setProperty(rowat, 4, 'style', 'font-size:9pt; text-align: left; width:175px');
+                data.setProperty(rowat, 5, 'style', 'font-size:9pt; text-align: left;');
+                data.setProperty(rowat, 6, 'style', 'font-size:9pt; text-align: left; width:300px');
+                data.setProperty(rowat, 7, 'style', 'font-size:9pt; text-align: left;');
+
+                var InfoNeeded = data.getValue(rowat,10);
+                if(InfoNeeded == "Y")
+                {
+                    data.setProperty(rowat, 1, 'style', 'font-size:9pt; text-align: center; color:blue; font-weight: bold;');
+
+                    var holdItem = data.getValue(rowat,1);  // Get contents of column [1]
+                    data.setCell(rowat,1,'<span title="This Item requires additional comments to be entered during exam registration.">'+holdItem+'</span>');
+                }
+
+                else
+                {
+                    data.setProperty(rowat, 1, 'style', 'font-size:9pt; text-align: center; color:green; font-weight: bold;');
+                }
+
+                data.setProperties(rowat, 2, {style: 'font-size:9pt; text-align: center;'});
+    
+                if (show10 == 1)
+                {
+                    data.setCell(rowat,0,'<input type="radio" id=rowNum title="Click to DELETE from Saved Items List and/or Copy to clipboard" onclick="this.disabled=true, rowNum=this.parentNode.parentNode.rowIndex-1, gif=0, RefreshTable();"/>');
+                }
+
+                else
+                {
+                    data.setCell(rowat,0,'<input type="radio" id=rowNum title="Click to ADD to Saved Items List and/or Copy to clipboard" onclick="this.disabled=true, rowNum=this.parentNode.parentNode.rowIndex-1, gif=0, RefreshTable();"/>');
+                }
+            } 
+
+            item2 = data.getValue(rowNum,1);
+        }
+
+        if (numRows != 0)
+        {
+            if (addColumn == 0)
+            {
+                // report2
+                var view = new google.visualization.DataView(data);
+
+                // hide column that brought Link text into table
+                view.setColumns([0,1,2,3,4,5,6,7,8,9,10,11]); 
+
+                for (var rowat = 0; rowat < numRows; rowat++)
+                {
+                    data.setProperties(rowat, 0, {style: 'text-align: center;'});
+                }
+
+                // draw table
+                visualization.draw(view, {allowHtml: true, frozenColumns:0});
+            }
+
+            else 
+            {
+                // results table
+                var view=new google.visualization.DataView(data);
+
+                // hide column that brought Link text into table
+                view.setColumns([0,1,2,3,4,5,6,7]);
+                
+                // draw table
+                visualization.draw(view, {allowHtml: true, frozenColumns:2, });
+            }
+        }
+
+        searchFlag = "enabled";
+
+    }  // End function handleQueryResponse
+
+    google.setOnLoadCallback(drawVisualization); 
+
+// ************************************************************************************************
+
+    function RefreshTable()
+    {
+        // get item # of row clicked and remove any title information
+        item2 = data.getValue(rowNum,1);
+        item2 = item2.replace(/<.*">/,"");
+        item2 = item2.replace(/<.*>/,"");
+
+        // check if adding to list and item is a duplicate
+        if (show10 == 0 && (item2==saved20 || item2==saved19 || item2==saved18 || item2==saved17 || item2==saved16 || item2==saved15 || item2==saved14 || item2==saved13 || item2==saved12 || item2==saved11 || item2==saved10 || item2==saved9 || item2==saved8 || item2==saved7 || item2==saved6 || item2==saved5 || item2==saved4 || item2==saved3 || item2==saved2 || item2==saved1))
+        {
+            promptInputAdd = prompt("Item is already in the Saved Item List. \rCTRL+C or CMD+C on your keyboard to COPY to your clipboard.", item2);
+        }
+
+        // check if adding to list and list is full and item is not a duplicate
+        else if (show10 == 0 && saved20 != "empty" && item2!=saved20 && item2!=saved19 && item2!=saved18 && item2!=saved17 && item2!=saved16 && item2!=saved15 && item2!=saved14 && item2!=saved13 && item2!=saved12 && item2!=saved11 && item2!=saved10 && item2!=saved9 && item2!=saved8 && item2!=saved7 && item2!=saved6 && item2!=saved5 && item2!=saved4 && item2!=saved3 && item2!=saved2 && item2!=saved1)
+        {
+            promptInputAdd = prompt("LIST IS FULL ! Click OK to DELETE oldest Item and ADD newest Item. \rCTRL+C or CMD+C on your keyboard to COPY to your clipboard.", item2);
+        }
+
+        else if (show10 == 0)
+        {
+            promptInputAdd = prompt("Click OK to ADD to Saved Item List or Cancel to NOT save. \rCTRL+C or CMD+C on your keyboard to COPY to your clipboard.", item2);
+
+  // Create a dummy input to copy the string array inside it
+  var dummy = document.createElement("input");
+  // Add it to the document
+  document.body.appendChild(dummy);
+  // Set its ID
+  dummy.setAttribute("id", "dummy_id");
+  // Output the array into it  
+  document.getElementById("dummy_id").value=item2;  
+  // Select it
+  dummy.select();
+  // Copy its contents
+  document.execCommand("copy");
+  // Remove it as its not needed anymore
+  document.body.removeChild(dummy);
+
+//document.execCommand("copy");
+        }
+
+        else
+        {
+            promptInputRemove = prompt("Click OK to DELETE Item from List or Cancel to KEEP. \rCTRL+C or CMD+C on your keyboard to COPY to your clipboard.", item2);
+        }
+
+        // check if should delete selected Item # (show10=1 means delete)
+        if (show10 == 1)
+        { 
+            message = " Item NOT deleted from Saved List.";
+
+            if (promptInputRemove != null)
+            {
+                message = "Item deleted from Saved List.";
+
+                // Look for item# to remove and shift older items
+                if (saved20 == item2)
+                {
+                    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+                                     setCookie("saved1",saved1,365);
+                                     setCookie("saved2",saved2,365);
+                                     setCookie("saved3",saved3,365);
+                                     setCookie("saved4",saved4,365);
+                                     setCookie("saved5",saved5,365);
+                                     setCookie("saved6",saved6,365);
+                                     setCookie("saved7",saved7,365);
+                                     setCookie("saved8",saved8,365);
+                                     setCookie("saved9",saved9,365);
+                                     setCookie("saved10",saved10,365);
+                                     setCookie("saved11",saved11,365);
+                                     setCookie("saved12",saved12,365);
+                                     setCookie("saved13",saved13,365);
+                                     setCookie("saved14",saved14,365);
+                                     setCookie("saved15",saved15,365);
+                                     setCookie("saved16",saved16,365);
+                                     setCookie("saved17",saved17,365);
+                                     setCookie("saved18",saved18,365);
+                                     setCookie("saved19",saved19,365);
+                    saved20="empty"; setCookie("saved20","empty",365);
+                }
+
+                if (saved19 == item2)
+                {
+                    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+                                     setCookie("saved1",saved1,365);
+                                     setCookie("saved2",saved2,365);
+                                     setCookie("saved3",saved3,365);
+                                     setCookie("saved4",saved4,365);
+                                     setCookie("saved5",saved5,365);
+                                     setCookie("saved6",saved6,365);
+                                     setCookie("saved7",saved7,365);
+                                     setCookie("saved8",saved8,365);
+                                     setCookie("saved9",saved9,365);
+                                     setCookie("saved10",saved10,365);
+                                     setCookie("saved11",saved11,365);
+                                     setCookie("saved12",saved12,365);
+                                     setCookie("saved13",saved13,365);
+                                     setCookie("saved14",saved14,365);
+                                     setCookie("saved15",saved15,365);
+                                     setCookie("saved16",saved16,365);
+                                     setCookie("saved17",saved17,365);
+                                     setCookie("saved18",saved18,365);
+                    saved19=saved20; setCookie("saved19",saved19,365);
+                    saved20="empty"; setCookie("saved20","empty",365);
+                }
+
+                if (saved18 == item2)
+                {
+                    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+                                     setCookie("saved1",saved1,365);
+                                     setCookie("saved2",saved2,365);
+                                     setCookie("saved3",saved3,365);
+                                     setCookie("saved4",saved4,365);
+                                     setCookie("saved5",saved5,365);
+                                     setCookie("saved6",saved6,365);
+                                     setCookie("saved7",saved7,365);
+                                     setCookie("saved8",saved8,365);
+                                     setCookie("saved9",saved9,365);
+                                     setCookie("saved10",saved10,365);
+                                     setCookie("saved11",saved11,365);
+                                     setCookie("saved12",saved12,365);
+                                     setCookie("saved13",saved13,365);
+                                     setCookie("saved14",saved14,365);
+                                     setCookie("saved15",saved15,365);
+                                     setCookie("saved16",saved16,365);
+                                     setCookie("saved17",saved17,365);
+                    saved18=saved19; setCookie("saved18",saved18,365);
+                    saved19=saved20; setCookie("saved19",saved19,365);
+                    saved20="empty"; setCookie("saved20","empty",365);
+                }
+
+                if (saved17 == item2)
+                {
+                    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+                                     setCookie("saved1",saved1,365);
+                                     setCookie("saved2",saved2,365);
+                                     setCookie("saved3",saved3,365);
+                                     setCookie("saved4",saved4,365);
+                                     setCookie("saved5",saved5,365);
+                                     setCookie("saved6",saved6,365);
+                                     setCookie("saved7",saved7,365);
+                                     setCookie("saved8",saved8,365);
+                                     setCookie("saved9",saved9,365);
+                                     setCookie("saved10",saved10,365);
+                                     setCookie("saved11",saved11,365);
+                                     setCookie("saved12",saved12,365);
+                                     setCookie("saved13",saved13,365);
+                                     setCookie("saved14",saved14,365);
+                                     setCookie("saved15",saved15,365);
+                                     setCookie("saved16",saved16,365);
+                    saved17=saved18; setCookie("saved17",saved17,365);
+                    saved18=saved19; setCookie("saved18",saved18,365);
+                    saved19=saved20; setCookie("saved19",saved19,365);
+                    saved20="empty"; setCookie("saved20","empty",365);
+                }
+
+                if (saved16 == item2)
+                {
+                    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+                                     setCookie("saved1",saved1,365);
+                                     setCookie("saved2",saved2,365);
+                                     setCookie("saved3",saved3,365);
+                                     setCookie("saved4",saved4,365);
+                                     setCookie("saved5",saved5,365);
+                                     setCookie("saved6",saved6,365);
+                                     setCookie("saved7",saved7,365);
+                                     setCookie("saved8",saved8,365);
+                                     setCookie("saved9",saved9,365);
+                                     setCookie("saved10",saved10,365);
+                                     setCookie("saved11",saved11,365);
+                                     setCookie("saved12",saved12,365);
+                                     setCookie("saved13",saved13,365);
+                                     setCookie("saved14",saved14,365);
+                                     setCookie("saved15",saved15,365);
+                    saved16=saved17; setCookie("saved16",saved16,365);
+                    saved17=saved18; setCookie("saved17",saved17,365);
+                    saved18=saved19; setCookie("saved18",saved18,365);
+                    saved19=saved20; setCookie("saved19",saved19,365);
+                    saved20="empty"; setCookie("saved20","empty",365);
+                }
+
+                if (saved15 == item2)
+                {
+                    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+                                     setCookie("saved1",saved1,365);
+                                     setCookie("saved2",saved2,365);
+                                     setCookie("saved3",saved3,365);
+                                     setCookie("saved4",saved4,365);
+                                     setCookie("saved5",saved5,365);
+                                     setCookie("saved6",saved6,365);
+                                     setCookie("saved7",saved7,365);
+                                     setCookie("saved8",saved8,365);
+                                     setCookie("saved9",saved9,365);
+                                     setCookie("saved10",saved10,365);
+                                     setCookie("saved11",saved11,365);
+                                     setCookie("saved12",saved12,365);
+                                     setCookie("saved13",saved13,365);
+                                     setCookie("saved14",saved14,365);
+                    saved15=saved16; setCookie("saved15",saved15,365);
+                    saved16=saved17; setCookie("saved16",saved16,365);
+                    saved17=saved18; setCookie("saved17",saved17,365);
+                    saved18=saved19; setCookie("saved18",saved18,365);
+                    saved19=saved20; setCookie("saved19",saved19,365);
+                    saved20="empty"; setCookie("saved20","empty",365);
+                }
+
+                if (saved14 == item2)
+                {
+                    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+                                     setCookie("saved1",saved1,365);
+                                     setCookie("saved2",saved2,365);
+                                     setCookie("saved3",saved3,365);
+                                     setCookie("saved4",saved4,365);
+                                     setCookie("saved5",saved5,365);
+                                     setCookie("saved6",saved6,365);
+                                     setCookie("saved7",saved7,365);
+                                     setCookie("saved8",saved8,365);
+                                     setCookie("saved9",saved9,365);
+                                     setCookie("saved10",saved10,365);
+                                     setCookie("saved11",saved11,365);
+                                     setCookie("saved12",saved12,365);
+                                     setCookie("saved13",saved13,365);
+                    saved14=saved15; setCookie("saved14",saved14,365);
+                    saved15=saved16; setCookie("saved15",saved15,365);
+                    saved16=saved17; setCookie("saved16",saved16,365);
+                    saved17=saved18; setCookie("saved17",saved17,365);
+                    saved18=saved19; setCookie("saved18",saved18,365);
+                    saved19=saved20; setCookie("saved19",saved19,365);
+                    saved20="empty"; setCookie("saved20","empty",365);
+                }
+
+                if (saved13 == item2)
+                {
+                    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+                                     setCookie("saved1",saved1,365);
+                                     setCookie("saved2",saved2,365);
+                                     setCookie("saved3",saved3,365);
+                                     setCookie("saved4",saved4,365);
+                                     setCookie("saved5",saved5,365);
+                                     setCookie("saved6",saved6,365);
+                                     setCookie("saved7",saved7,365);
+                                     setCookie("saved8",saved8,365);
+                                     setCookie("saved9",saved9,365);
+                                     setCookie("saved10",saved10,365);
+                                     setCookie("saved11",saved11,365);
+                                     setCookie("saved12",saved12,365);
+                    saved13=saved14; setCookie("saved13",saved13,365);
+                    saved14=saved15; setCookie("saved14",saved14,365);
+                    saved15=saved16; setCookie("saved15",saved15,365);
+                    saved16=saved17; setCookie("saved16",saved16,365);
+                    saved17=saved18; setCookie("saved17",saved17,365);
+                    saved18=saved19; setCookie("saved18",saved18,365);
+                    saved19=saved20; setCookie("saved19",saved19,365);
+                    saved20="empty"; setCookie("saved20","empty",365);
+                }
+
+                if (saved12 == item2)
+                {
+                    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+                                     setCookie("saved1",saved1,365);
+                                     setCookie("saved2",saved2,365);
+                                     setCookie("saved3",saved3,365);
+                                     setCookie("saved4",saved4,365);
+                                     setCookie("saved5",saved5,365);
+                                     setCookie("saved6",saved6,365);
+                                     setCookie("saved7",saved7,365);
+                                     setCookie("saved8",saved8,365);
+                                     setCookie("saved9",saved9,365);
+                                     setCookie("saved10",saved10,365);
+                                     setCookie("saved11",saved11,365);
+                    saved12=saved13; setCookie("saved12",saved12,365);
+                    saved13=saved14; setCookie("saved13",saved13,365);
+                    saved14=saved15; setCookie("saved14",saved14,365);
+                    saved15=saved16; setCookie("saved15",saved15,365);
+                    saved16=saved17; setCookie("saved16",saved16,365);
+                    saved17=saved18; setCookie("saved17",saved17,365);
+                    saved18=saved19; setCookie("saved18",saved18,365);
+                    saved19=saved20; setCookie("saved19",saved19,365);
+                    saved20="empty"; setCookie("saved20","empty",365);
+                }
+
+                if (saved11 == item2)
+                {
+                    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+                                     setCookie("saved1",saved1,365);
+                                     setCookie("saved2",saved2,365);
+                                     setCookie("saved3",saved3,365);
+                                     setCookie("saved4",saved4,365);
+                                     setCookie("saved5",saved5,365);
+                                     setCookie("saved6",saved6,365);
+                                     setCookie("saved7",saved7,365);
+                                     setCookie("saved8",saved8,365);
+                                     setCookie("saved9",saved9,365);
+                                     setCookie("saved10",saved10,365);
+                    saved11=saved12; setCookie("saved11",saved11,365);
+                    saved12=saved13; setCookie("saved12",saved12,365);
+                    saved13=saved14; setCookie("saved13",saved13,365);
+                    saved14=saved15; setCookie("saved14",saved14,365);
+                    saved15=saved16; setCookie("saved15",saved15,365);
+                    saved16=saved17; setCookie("saved16",saved16,365);
+                    saved17=saved18; setCookie("saved17",saved17,365);
+                    saved18=saved19; setCookie("saved18",saved18,365);
+                    saved19=saved20; setCookie("saved19",saved19,365);
+                    saved20="empty"; setCookie("saved20","empty",365);
+                }
+
+                if (saved10 == item2)
+                {
+                    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+                                     setCookie("saved1",saved1,365);
+                                     setCookie("saved2",saved2,365);
+                                     setCookie("saved3",saved3,365);
+                                     setCookie("saved4",saved4,365);
+                                     setCookie("saved5",saved5,365);
+                                     setCookie("saved6",saved6,365);
+                                     setCookie("saved7",saved7,365);
+                                     setCookie("saved8",saved8,365);
+                                     setCookie("saved9",saved9,365);
+                    saved10=saved11; setCookie("saved10",saved10,365);
+                    saved11=saved12; setCookie("saved11",saved11,365);
+                    saved12=saved13; setCookie("saved12",saved12,365);
+                    saved13=saved14; setCookie("saved13",saved13,365);
+                    saved14=saved15; setCookie("saved14",saved14,365);
+                    saved15=saved16; setCookie("saved15",saved15,365);
+                    saved16=saved17; setCookie("saved16",saved16,365);
+                    saved17=saved18; setCookie("saved17",saved17,365);
+                    saved18=saved19; setCookie("saved18",saved18,365);
+                    saved19=saved20; setCookie("saved19",saved19,365);
+                    saved20="empty"; setCookie("saved20","empty",365);
+                }
+
+
+                if (saved9 == item2)
+                {
+                    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+                                     setCookie("saved1",saved1,365);
+                                     setCookie("saved2",saved2,365);
+                                     setCookie("saved3",saved3,365);
+                                     setCookie("saved4",saved4,365);
+                                     setCookie("saved5",saved5,365);
+                                     setCookie("saved6",saved6,365);
+                                     setCookie("saved7",saved7,365);
+                                     setCookie("saved8",saved8,365);
+                    saved9=saved10;  setCookie("saved9",saved9,365);
+                    saved10=saved11; setCookie("saved10",saved10,365);
+                    saved11=saved12; setCookie("saved11",saved11,365);
+                    saved12=saved13; setCookie("saved12",saved12,365);
+                    saved13=saved14; setCookie("saved13",saved13,365);
+                    saved14=saved15; setCookie("saved14",saved14,365);
+                    saved15=saved16; setCookie("saved15",saved15,365);
+                    saved16=saved17; setCookie("saved16",saved16,365);
+                    saved17=saved18; setCookie("saved17",saved17,365);
+                    saved18=saved19; setCookie("saved18",saved18,365);
+                    saved19=saved20; setCookie("saved19",saved19,365);
+                    saved20="empty"; setCookie("saved20","empty",365);
+                }
+
+                if (saved8 == item2) 
+                {
+                    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+                                     setCookie("saved1",saved1,365);
+                                     setCookie("saved2",saved2,365);
+                                     setCookie("saved3",saved3,365);
+                                     setCookie("saved4",saved4,365);
+                                     setCookie("saved5",saved5,365);
+                                     setCookie("saved6",saved6,365);
+                                     setCookie("saved7",saved7,365);
+                    saved8=saved9;  setCookie("saved8",saved8,365);
+                    saved9=saved10;  setCookie("saved9",saved9,365);
+                    saved10=saved11; setCookie("saved10",saved10,365);
+                    saved11=saved12; setCookie("saved11",saved11,365);
+                    saved12=saved13; setCookie("saved12",saved12,365);
+                    saved13=saved14; setCookie("saved13",saved13,365);
+                    saved14=saved15; setCookie("saved14",saved14,365);
+                    saved15=saved16; setCookie("saved15",saved15,365);
+                    saved16=saved17; setCookie("saved16",saved16,365);
+                    saved17=saved18; setCookie("saved17",saved17,365);
+                    saved18=saved19; setCookie("saved18",saved18,365);
+                    saved19=saved20; setCookie("saved19",saved19,365);
+                    saved20="empty"; setCookie("saved20","empty",365);
+                }
+
+                if (saved7 == item2) 
+                {
+                    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+                                     setCookie("saved1",saved1,365);
+                                     setCookie("saved2",saved2,365);
+                                     setCookie("saved3",saved3,365);
+                                     setCookie("saved4",saved4,365);
+                                     setCookie("saved5",saved5,365);
+                                     setCookie("saved6",saved6,365);
+                    saved7=saved8;   setCookie("saved7",saved7,365);
+                    saved8=saved9;   setCookie("saved8",saved8,365);
+                    saved9=saved10;  setCookie("saved9",saved9,365);
+                    saved10=saved11; setCookie("saved10",saved10,365);
+                    saved11=saved12; setCookie("saved11",saved11,365);
+                    saved12=saved13; setCookie("saved12",saved12,365);
+                    saved13=saved14; setCookie("saved13",saved13,365);
+                    saved14=saved15; setCookie("saved14",saved14,365);
+                    saved15=saved16; setCookie("saved15",saved15,365);
+                    saved16=saved17; setCookie("saved16",saved16,365);
+                    saved17=saved18; setCookie("saved17",saved17,365);
+                    saved18=saved19; setCookie("saved18",saved18,365);
+                    saved19=saved20; setCookie("saved19",saved19,365);
+                    saved20="empty"; setCookie("saved20","empty",365);
+                }
+
+                if (saved6 == item2) 
+                {
+                    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+                                     setCookie("saved1",saved1,365);
+                                     setCookie("saved2",saved2,365);
+                                     setCookie("saved3",saved3,365);
+                                     setCookie("saved4",saved4,365);
+                                     setCookie("saved5",saved5,365);
+                    saved6=saved7;   setCookie("saved6",saved6,365);
+                    saved7=saved8;   setCookie("saved7",saved7,365);
+                    saved8=saved9;   setCookie("saved8",saved8,365);
+                    saved9=saved10;  setCookie("saved9",saved9,365);
+                    saved10=saved11; setCookie("saved10",saved10,365);
+                    saved11=saved12; setCookie("saved11",saved11,365);
+                    saved12=saved13; setCookie("saved12",saved12,365);
+                    saved13=saved14; setCookie("saved13",saved13,365);
+                    saved14=saved15; setCookie("saved14",saved14,365);
+                    saved15=saved16; setCookie("saved15",saved15,365);
+                    saved16=saved17; setCookie("saved16",saved16,365);
+                    saved17=saved18; setCookie("saved17",saved17,365);
+                    saved18=saved19; setCookie("saved18",saved18,365);
+                    saved19=saved20; setCookie("saved19",saved19,365);
+                    saved20="empty"; setCookie("saved20","empty",365);
+                }
+
+                if (saved5 == item2) 
+                {
+                    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+                                     setCookie("saved1",saved1,365);
+                                     setCookie("saved2",saved2,365);
+                                     setCookie("saved3",saved3,365);
+                                     setCookie("saved4",saved4,365);
+                    saved5=saved6;   setCookie("saved5",saved5,365);
+                    saved6=saved7;   setCookie("saved6",saved6,365);
+                    saved7=saved8;   setCookie("saved7",saved7,365);
+                    saved8=saved9;   setCookie("saved8",saved8,365);
+                    saved9=saved10;  setCookie("saved9",saved9,365);
+                    saved10=saved11; setCookie("saved10",saved10,365);
+                    saved11=saved12; setCookie("saved11",saved11,365);
+                    saved12=saved13; setCookie("saved12",saved12,365);
+                    saved13=saved14; setCookie("saved13",saved13,365);
+                    saved14=saved15; setCookie("saved14",saved14,365);
+                    saved15=saved16; setCookie("saved15",saved15,365);
+                    saved16=saved17; setCookie("saved16",saved16,365);
+                    saved17=saved18; setCookie("saved17",saved17,365);
+                    saved18=saved19; setCookie("saved18",saved18,365);
+                    saved19=saved20; setCookie("saved19",saved19,365);
+                    saved20="empty"; setCookie("saved20","empty",365);
+                }
+
+                if (saved4 == item2) 
+                {
+                    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+                                     setCookie("saved1",saved1,365);
+                                     setCookie("saved2",saved2,365);
+                                     setCookie("saved3",saved3,365);
+                    saved4=saved5;   setCookie("saved4",saved4,365);
+                    saved5=saved6;   setCookie("saved5",saved5,365);
+                    saved6=saved7;   setCookie("saved6",saved6,365);
+                    saved7=saved8;   setCookie("saved7",saved7,365);
+                    saved8=saved9;   setCookie("saved8",saved8,365);
+                    saved9=saved10;  setCookie("saved9",saved9,365);
+                    saved10=saved11; setCookie("saved10",saved10,365);
+                    saved11=saved12; setCookie("saved11",saved11,365);
+                    saved12=saved13; setCookie("saved12",saved12,365);
+                    saved13=saved14; setCookie("saved13",saved13,365);
+                    saved14=saved15; setCookie("saved14",saved14,365);
+                    saved15=saved16; setCookie("saved15",saved15,365);
+                    saved16=saved17; setCookie("saved16",saved16,365);
+                    saved17=saved18; setCookie("saved17",saved17,365);
+                    saved18=saved19; setCookie("saved18",saved18,365);
+                    saved19=saved20; setCookie("saved19",saved19,365);
+                    saved20="empty"; setCookie("saved20","empty",365);
+                }
+
+                if (saved3 == item2) 
+                {
+                    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+                                     setCookie("saved1",saved1,365);
+                                     setCookie("saved2",saved2,365);
+                    saved3=saved4;   setCookie("saved3",saved3,365);
+                    saved4=saved5;   setCookie("saved4",saved4,365);
+                    saved5=saved6;   setCookie("saved5",saved5,365);
+                    saved6=saved7;   setCookie("saved6",saved6,365);
+                    saved7=saved8;   setCookie("saved7",saved7,365);
+                    saved8=saved9;   setCookie("saved8",saved8,365);
+                    saved9=saved10;  setCookie("saved9",saved9,365);
+                    saved10=saved11; setCookie("saved10",saved10,365);
+                    saved11=saved12; setCookie("saved11",saved11,365);
+                    saved12=saved13; setCookie("saved12",saved12,365);
+                    saved13=saved14; setCookie("saved13",saved13,365);
+                    saved14=saved15; setCookie("saved14",saved14,365);
+                    saved15=saved16; setCookie("saved15",saved15,365);
+                    saved16=saved17; setCookie("saved16",saved16,365);
+                    saved17=saved18; setCookie("saved17",saved17,365);
+                    saved18=saved19; setCookie("saved18",saved18,365);
+                    saved19=saved20; setCookie("saved19",saved19,365);
+                    saved20="empty"; setCookie("saved20","empty",365);
+                }
+
+                  if (saved2 == item2) 
+                {
+                    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+                                     setCookie("saved1",saved1,365);
+                    saved2=saved3;   setCookie("saved2",saved2,365);
+                    saved3=saved4;   setCookie("saved3",saved3,365);
+                    saved4=saved5;   setCookie("saved4",saved4,365);
+                    saved5=saved6;   setCookie("saved5",saved5,365);
+                    saved6=saved7;   setCookie("saved6",saved6,365);
+                    saved7=saved8;   setCookie("saved7",saved7,365);
+                    saved8=saved9;   setCookie("saved8",saved8,365);
+                    saved9=saved10;  setCookie("saved9",saved9,365);
+                    saved10=saved11; setCookie("saved10",saved10,365);
+                    saved11=saved12; setCookie("saved11",saved11,365);
+                    saved12=saved13; setCookie("saved12",saved12,365);
+                    saved13=saved14; setCookie("saved13",saved13,365);
+                    saved14=saved15; setCookie("saved14",saved14,365);
+                    saved15=saved16; setCookie("saved15",saved15,365);
+                    saved16=saved17; setCookie("saved16",saved16,365);
+                    saved17=saved18; setCookie("saved17",saved17,365);
+                    saved18=saved19; setCookie("saved18",saved18,365);
+                    saved19=saved20; setCookie("saved19",saved19,365);
+                    saved20="empty"; setCookie("saved20","empty",365);
+                }
+
+                  if (saved1 == item2) 
+                {
+                    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+                    saved1=saved2;   setCookie("saved1",saved1,365);
+                    saved2=saved3;   setCookie("saved2",saved2,365);
+                    saved3=saved4;   setCookie("saved3",saved3,365);
+                    saved4=saved5;   setCookie("saved4",saved4,365);
+                    saved5=saved6;   setCookie("saved5",saved5,365);
+                    saved6=saved7;   setCookie("saved6",saved6,365);
+                    saved7=saved8;   setCookie("saved7",saved7,365);
+                    saved8=saved9;   setCookie("saved8",saved8,365);
+                    saved9=saved10;  setCookie("saved9",saved9,365);
+                    saved10=saved11; setCookie("saved10",saved10,365);
+                    saved11=saved12; setCookie("saved11",saved11,365);
+                    saved12=saved13; setCookie("saved12",saved12,365);
+                    saved13=saved14; setCookie("saved13",saved13,365);
+                    saved14=saved15; setCookie("saved14",saved14,365);
+                    saved15=saved16; setCookie("saved15",saved15,365);
+                    saved16=saved17; setCookie("saved16",saved16,365);
+                    saved17=saved18; setCookie("saved17",saved17,365);
+                    saved18=saved19; setCookie("saved18",saved18,365);
+                    saved19=saved20; setCookie("saved19",saved19,365);
+                    saved20="empty"; setCookie("saved20","empty",365);
+                }
+
+                setCookie();
+            }
+
+            // reset flag (show10=0 means don't remove items
+            show10 = 0;
+            item2 = "empty";
+            promptInputRemove = "";
+                                
+            updateMessage();
+
+            // set Options dropdown to Show saved Item #'s
+            document.getElementById("menopt").selectedIndex = 1;
+
+            drawVisualization();
+        }
+
+
+        // Check if should add Item to Saved List
+        else 
+        {
+            message = "Item NOT added to Saved List.";
+  
+            if (promptInputAdd != null)
+            {
+                // check for duplicate Item #
+                if (item2==saved20 || item2==saved19 || item2==saved18 || item2==saved17 || item2==saved16 || item2==saved15 || item2==saved14 || item2==saved13 || item2==saved12 || item2==saved11 || item2==saved10 || item2==saved9 || item2==saved8 || item2==saved7 || item2==saved6 || item2==saved5 || item2==saved4 || item2==saved3 || item2==saved2 || item2==saved1)
+                {
+                    item2 = "empty";
+                    message = "Item added to Saved List.";
+                }
+
+                // else shift saved item #s
+                else
+                {
+                    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+                    saved20 = saved19; setCookie("saved20",saved20,365);
+                    saved19 = saved18; setCookie("saved19",saved19,365);
+                    saved18 = saved17; setCookie("saved18",saved18,365);
+                    saved17 = saved16; setCookie("saved17",saved17,365);
+                    saved16 = saved15; setCookie("saved16",saved16,365);
+                    saved15 = saved14; setCookie("saved15",saved15,365);
+                    saved14 = saved13; setCookie("saved14",saved14,365);
+                    saved13 = saved12; setCookie("saved13",saved13,365);
+                    saved12 = saved11; setCookie("saved12",saved12,365);
+                    saved11 = saved10; setCookie("saved11",saved11,365);
+                    saved10 = saved9; setCookie("saved10",saved10,365);
+                    saved9 = saved8; setCookie("saved9",saved9,365);
+                    saved8 = saved7; setCookie("saved8",saved8,365);
+                    saved7 = saved6; setCookie("saved7",saved7,365);
+                    saved6 = saved5; setCookie("saved6",saved6,365);
+                    saved5 = saved4; setCookie("saved5",saved5,365);
+                    saved4 = saved3; setCookie("saved4",saved4,365);
+                    saved3 = saved2; setCookie("saved3",saved3,365);
+                    saved2 = saved1; setCookie("saved2",saved2,365);
+                    saved1 = item2; setCookie("saved1",saved1,365);
+
+                    message = "Item added to Saved List.";
+                }
+            }
+
+
+            // alert("1="+saved1+" 2="+saved2+" 3="+saved3+" 4="+saved4+" 5="+saved5+" 6="+saved6+" 7="+saved7+" 8="+saved8+" 9="+saved9+" 10="+saved10);
+        
+            updateMessage();
+
+            promptItemAdd = "";
+        }
+
+        // reset row number
+        rowNum = 0;
+
+        // results table
+        view=new google.visualization.DataView(data);
+
+        // hide column that brought Link text into table
+        view.setColumns([0,1,2,3,4,5,6,7]);
+                
+        // draw table
+        visualization.draw(view, {allowHtml: true, frozenColumns:2});
+    }
+
+// ********************************************************************************
+
+    function resetGif(id) 
+    {
+        var img = document.getElementById(id);
+        var imageUrl = img.src;
+        img.src = "https://mlsvc01-prod.s3.amazonaws.com/1603e3db001/3086f23a-a759-4c33-85e6-ea0c76e59e6b.gif";
+        img.src = imageUrl;
+    }
+
+// ********************************************************************************
+
+    function arrowBack()
+    {
+        if(search2 != "")
+        {
+            searchHold20 = searchHold19;
+            searchHold19 = searchHold18;
+            searchHold18 = searchHold17;
+            searchHold17 = searchHold16;
+            searchHold16 = searchHold15;
+            searchHold15 = searchHold14;
+            searchHold14 = searchHold13;
+            searchHold13 = searchHold12;
+            searchHold12 = searchHold11;
+            searchHold11 = searchHold10;
+            searchHold10 = searchHold9;
+            searchHold9 = searchHold8;
+            searchHold8 = searchHold7;
+            searchHold7 = searchHold6;
+            searchHold6 = searchHold5;
+            searchHold5 = searchHold4;
+            searchHold4 = searchHold3;
+            searchHold3 = searchHold2;
+            searchHold2 = searchHold1;
+            searchHold1 = search1;
+            search1 = search2;
+            search2 = search3;
+            search3 = search4;
+            search4 = search5;
+            search5 = search6;
+            search6 = search7;
+            search7 = search8;
+            search8 = search9;
+            search9 = search10;
+            search10 = search11;
+            search11 = search12;
+            search12 = search13;
+            search13 = search14;
+            search14 = search15;
+            search15 = search16;
+            search16 = search17;
+            search17 = search18;
+            search18 = search19;
+            search19 = search20;
+            search20 = "";
+
+// alert("10H:"+searchHold10+" 9H:"+searchHold9+" 8H:"+searchHold8+" 7H:"+searchHold7+" 6H:"+searchHold6+" 5H:"+searchHold5+" 4H:"+searchHold4+" 3H:"+searchHold3+" 2H:"+searchHold2+" 1H:"+searchHold1+" 1S:"+search1+" 2S:"+search2+" 3S:"+search3+" 4S:"+search4+" 5S:"+search5+" 6S:"+search6+" 7S:"+search7+" 8S:"+search8+" 9S:"+search9+" 10S:"+search10);
+
+        }
+        
+        setArrowColor();
+
+        fillBoxes();
+    }
+
+// ********************************************************************************
+
+    function arrowFwd()
+    {
+        if(searchHold1 != "")
+        {
+            search20 = search19;
+            search19 = search18;
+            search18 = search17;
+            search17 = search16;
+            search16 = search15;
+            search15 = search14;
+            search14 = search13;
+            search13 = search12;
+            search12 = search11;
+            search11 = search10;            
+            search10 = search9;
+            search9 = search8;
+            search8 = search7;
+            search7 = search6;
+            search6 = search5;
+            search5 = search4;
+            search4 = search3;
+            search3 = search2;
+            search2 = search1;
+            search1 = searchHold1;
+            searchHold1 = searchHold2;
+            searchHold2 = searchHold3;
+            searchHold3 = searchHold4;
+            searchHold4 = searchHold5;
+            searchHold5 = searchHold6;
+            searchHold6 = searchHold7;
+            searchHold7 = searchHold8;
+            searchHold8 = searchHold9;
+            searchHold9 = searchHold10;
+            searchHold10 = searchHold11;
+            searchHold11 = searchHold12;
+            searchHold12 = searchHold13;
+            searchHold13 = searchHold14;
+            searchHold14 = searchHold15;
+            searchHold15 = searchHold16;
+            searchHold16 = searchHold17;
+            searchHold17 = searchHold18;
+            searchHold18 = searchHold19;
+            searchHold19 = searchHold20;
+            searchHold20 = "";
+
+// alert("10H:"+searchHold10+" 9H:"+searchHold9+" 8H:"+searchHold8+" 7H:"+searchHold7+" 6H:"+searchHold6+" 5H:"+searchHold5+" 4H:"+searchHold4+" 3H:"+searchHold3+" 2H:"+searchHold2+" 1H:"+searchHold1+" 1S:"+search1+" 2S:"+search2+" 3S:"+search3+" 4S:"+search4+" 5S:"+search5+" 6S:"+search6+" 7S:"+search7+" 8S:"+search8+" 9S:"+search9+" 10S:"+search10);
+
+        }
+
+        setArrowColor();
+
+        fillBoxes();
+    }
+
+// ********************************************************************************
+
+    function setArrowColor()
+        {
+            if(search2 == "")
+            {
+                document.getElementById("backArrow").style.color = "lightgray"
+            }
+        
+            else
+            {
+                document.getElementById("backArrow").style.color = "black"
+            }
+
+            if(searchHold1 == "")
+            {
+                document.getElementById("fwdArrow").style.color = "lightgray"
+            }
+        
+            else
+            {
+                document.getElementById("fwdArrow").style.color = "black"
+            }
+        }
+
+// ********************************************************************************
+
+    function fillBoxes()
+        {
+            searchSplit = search1.split("@");
+
+            // Put old search terms in search boxes
+            document.getElementById ("item").value        = searchSplit [0];
+            document.getElementById ("level").value       = searchSplit [1];
+            document.getElementById ("composer").value    = searchSplit [2];
+            document.getElementById ("composition").value = searchSplit [3];
+            document.getElementById ("editor").value      = searchSplit [4];
+            document.getElementById ("collection").value  = searchSplit [5];
+            document.getElementById ("syllabus").value    = searchSplit [6];
+        }
+
+// ********************************************************************************
+
+    function updateMessage()
+        {
+            // set message color to blue
+            document.getElementById("message").style.color="blue";
+
+            // display message
+            document.getElementById("message").innerHTML = message;
+
+            // set Options dropdown to Options
+            document.getElementById("menopt").selectedIndex = 0;
+            option = "Search Options";
+
+            // set search icon color to black
+            document.getElementById("btnSearch2+").style.display = "none";
+            document.getElementById("btnSearch2").style.color = "black";
+            document.getElementById("btnSearch2").style.display = "inline";
+        }
+
+// ********************************************************************************
+
+    function optionsQuery()
+    {
+        show10 = 0;
+
+        // Get Option value
+        var obj = document.getElementById("menopt");
+        option = obj.options[obj.selectedIndex].text;
+ 
+        addColumn = 0; // set flag to not add radio button column
+
+        // Set Query to Perform
+
+        if (item == "report1")
+        {
+            var query = new google.visualization.Query(report1Url);
+            query.setQuery ('select B,C where upper(A) matches upper("'+item+'")'); 
+        } 
+
+        else if (item == "report2")
+        {
+            var query = new google.visualization.Query(report2Url);
+            query.setQuery ('select B,C,D,E,F,G,H,I,J,K,L,M where upper(A) matches upper ("'+item+'")')
+        } 
+
+        else if (option == "List Collections by Editor")
+        {
+            var query = new google.visualization.Query(listUrl);
+            query.setQuery ('select K,L where K is not null and K != "" order by K');
+        }
+
+        else if (option == "List Books and Collections")
+        {
+            var query = new google.visualization.Query(listUrl);
+            query.setQuery ('select AD,AE where AF >0 order by AE');
+        }
+
+        else if (option == "List Books")
+        {
+            var query = new google.visualization.Query(listUrl);
+            query.setQuery ('select H where H is not null and H !="" order by H');
+        }
+
+        else if (option == "List Collections")
+        {
+            var query = new google.visualization.Query(listUrl);
+            query.setQuery ('select K,L where K is not null and K != "" order by L');
+        }
+
+        else if (option == "Show saved Item #'s")
+        {
+            show10 = 1
+            addColumn = 1; // set flag to add radio button column
+            var query = new google.visualization.Query(syllabusUrl);
+
+            query.setQuery ('select A,B,C,D,E,F,G,I,J,L where upper(A) matches upper("'+saved1+'") or upper(A) matches upper("'+saved2+'") or upper(A) matches upper("'+saved3+'") or upper(A) matches upper("'+saved4+'") or upper(A) matches upper("'+saved5+'") or upper(A) matches upper("'+saved6+'") or upper(A) matches upper("'+saved7+'") or upper(A) matches upper("'+saved8+'") or upper(A) matches upper("'+saved9+'") or upper(A) matches upper("'+saved10+'") or upper(A) matches upper("'+saved11+'") or upper(A) matches upper("'+saved12+'") or upper(A) matches upper("'+saved13+'") or upper(A) matches upper("'+saved14+'") or upper(A) matches upper("'+saved15+'") or upper(A) matches upper("'+saved16+'") or upper(A) matches upper("'+saved17+'") or upper(A) matches upper("'+saved18+'") or upper(A) matches upper("'+saved19+'") or upper(A) matches upper("'+saved20+'") order by G,B,C,D,E,F'); 
+        } 
+
+        message = "Searching . . .";
+        updateMessage();
+        Temp = "";
+        Temp2 = "";
+        ReSearch = 0;
+
+        // Send the query with a callback function.
+        query.send(handleQueryResponse);
+
+    }  // End function optionsquery
+
+// ********************************************************************************
+
+    function optionSelected() 
+    {
+        // Get Option value
+        var obj = document.getElementById("menopt");
+        option = obj.options[obj.selectedIndex].text;
+        
+        if (option == "Don't limit results to 999" || option == "Sort like printed syllabus")
+        {
+            return;
+        }
+
+        drawVisualization();
+    }
+
+// ********************************************************************************
+
+function setCookie(cname,cvalue,exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname+"="+cvalue+"; "+expires;
+}
+
+// ********************************************************************************
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+// ********************************************************************************
+
+function checkCookie() {
+    saved1=getCookie("saved1"); if(saved1==""){saved1="empty"};
+    saved2=getCookie("saved2"); if(saved2==""){saved2="empty"};
+    saved3=getCookie("saved3"); if(saved3==""){saved3="empty"};
+    saved4=getCookie("saved4"); if(saved4==""){saved4="empty"};
+    saved5=getCookie("saved5"); if(saved5==""){saved5="empty"};
+    saved6=getCookie("saved6"); if(saved6==""){saved6="empty"};
+    saved7=getCookie("saved7"); if(saved7==""){saved7="empty"};
+    saved8=getCookie("saved8"); if(saved8==""){saved8="empty"};
+    saved9=getCookie("saved9"); if(saved9==""){saved9="empty"};
+    saved10=getCookie("saved10");  if(saved10==""){saved10="empty"};
+    saved11=getCookie("saved11"); if(saved11==""){saved11="empty"};
+    saved12=getCookie("saved12"); if(saved12==""){saved12="empty"};
+    saved13=getCookie("saved13"); if(saved13==""){saved13="empty"};
+    saved14=getCookie("saved14"); if(saved14==""){saved14="empty"};
+    saved15=getCookie("saved15"); if(saved15==""){saved15="empty"};
+    saved16=getCookie("saved16"); if(saved16==""){saved16="empty"};
+    saved17=getCookie("saved17"); if(saved17==""){saved17="empty"};
+    saved18=getCookie("saved18"); if(saved18==""){saved18="empty"};
+    saved19=getCookie("saved19"); if(saved19==""){saved19="empty"};
+    saved20=getCookie("saved20");  if(saved20==""){saved20="empty"};
+}
+
+// ********************************************************************************
+
+
+</script>
+
+    <body style="font-family: Arial;border: 0 none;">
+        <div id="visualization" style="height: 500px; width: 875px;"></div>
+    </body>
+
+<datalist id="composers">
+  <option value="Adams">
+  <option value="Adler">
+  <option value="Agay">
+  <option value="Albeniz, I.">
+  <option value="Albeniz, M.">
+  <option value="Aldana">
+  <option value="Alexander">
+  <option value="Andre">
+  <option value="Anonymous">
+  <option value="Arne">
+  <option value="Arnold">
+  <option value="Attwood">
+  <option value="Austin">
+  <option value="Bacewicz">
+  <option value="Bach, C.P.E.">
+  <option value="Bach, J.C.">
+  <option value="Bach, J.C. & Ricci">
+  <option value="Bach, J.C.F.">
+  <option value="Bach, J.S.">
+  <option value="Bach, W.F.">
+  <option value="Baity">
+  <option value="Barber">
+  <option value="Bartalus">
+  <option value="Bartok">
+  <option value="Bastien">
+  <option value="Bator">
+  <option value="Battista">
+  <option value="Baumgartner">
+  <option value="Bayly">
+  <option value="Beach">
+  <option value="Beaumont">
+  <option value="Beethoven">
+  <option value="Beissert">
+  <option value="Benda">
+  <option value="Bennett">
+  <option value="Bentley">
+  <option value="Berens">
+  <option value="Berg">
+  <option value="Berkovich">
+  <option value="Bernstein, L.">
+  <option value="Bernstein, S.">
+  <option value="Berr">
+  <option value="Bertini">
+  <option value="Beyer">
+  <option value="Biehl">
+  <option value="Bihari">
+  <option value="Bilotti">
+  <option value="Blake">
+  <option value="Bloch">
+  <option value="Blow">
+  <option value="Bober">
+  <option value="Bohm">
+  <option value="Bolck">
+  <option value="Bolcom">
+  <option value="Bortkiewicz">
+  <option value="Boyd">
+  <option value="Brahms">
+  <option value="Breslaur">
+  <option value="Britten">
+  <option value="Brooks-Turner">
+  <option value="Brown">
+  <option value="Brunner">
+  <option value="Burgmuller">
+  <option value="Burnam">
+  <option value="Butler">
+  <option value="Buttstedt (Buttstett)">
+  <option value="Byers">
+  <option value="Caldini">
+  <option value="Camidge">
+  <option value="Capers">
+  <option value="Caramia">
+  <option value="Carr">
+  <option value="Carvalho">
+  <option value="Casella">
+  <option value="Cervantes">
+  <option value="Chadwick">
+  <option value="Chaminade">
+  <option value="Chopin">
+  <option value="Chovan">
+  <option value="Cimarosa">
+  <option value="Clark">
+  <option value="Clark, J.">
+  <option value="Clarke">
+  <option value="Clementi">
+  <option value="Cobb">
+  <option value="Coleridge-Taylor">
+  <option value="Colizzi">
+  <option value="Concone">
+  <option value="Cooper">
+  <option value="Copeland">
+  <option value="Copland">
+  <option value="Corelli">
+  <option value="Corn">
+  <option value="Corrette">
+  <option value="Costley">
+  <option value="Couperin">
+  <option value="Cowell">
+  <option value="Creston">
+  <option value="Crotch">
+  <option value="Cuellar">
+  <option value="Cui">
+  <option value="Czerny">
+  <option value="D'Angicourt">
+  <option value="d'Anglebert">
+  <option value="Dakkert">
+  <option value="Dandrieu">
+  <option value="Daquin">
+  <option value="de Brossard">
+  <option value="de Falla">
+  <option value="De La Guerre">
+  <option value="Debussy">
+  <option value="Dello Joio">
+  <option value="Demarest">
+  <option value="Destouches">
+  <option value="Dett">
+  <option value="Diabelli">
+  <option value="Diemer">
+  <option value="Dietzer">
+  <option value="Dieupart">
+  <option value="Dittersdorf">
+  <option value="Dohnanyi">
+  <option value="Dorn">
+  <option value="Dubliansky">
+  <option value="Duncombe">
+  <option value="Duport">
+  <option value="Dussek">
+  <option value="Dutton">
+  <option value="Duvernoy">
+  <option value="Dvorak">
+  <option value="Ebner">
+  <option value="Ellmenreich">
+  <option value="Ermirio">
+  <option value="Eshpai">
+  <option value="Evans">
+  <option value="Faber, N.">
+  <option value="Faber, R.">
+  <option value="Farwell">
+  <option value="Faure">
+  <option value="Felton">
+  <option value="Ferrer">
+  <option value="Fibich">
+  <option value="Field">
+  <option value="Field, J.">
+  <option value="Finney">
+  <option value="Fischer">
+  <option value="Foote">
+  <option value="Foss">
+  <option value="Frackenpohl">
+  <option value="Franck">
+  <option value="Freed, I.">
+  <option value="Froberger">
+  <option value="Fuchs">
+  <option value="Gade">
+  <option value="Galuppi">
+  <option value="Gambarini">
+  <option value="Garcia">
+  <option value="Garrow">
+  <option value="Geoffroy">
+  <option value="George">
+  <option value="Gershwin">
+  <option value="Gerstein">
+  <option value="Gervaise">
+  <option value="Gillock">
+  <option value="Ginastera">
+  <option value="Giovanni">
+  <option value="Glass">
+  <option value="Gliere">
+  <option value="Glinka">
+  <option value="Glover">
+  <option value="Gnessina">
+  <option value="Goedicke (Gedike)">
+  <option value="Goldston, C.">
+  <option value="Goldston, M.">
+  <option value="Gossec">
+  <option value="Gounod">
+  <option value="Graeff">
+  <option value="Grafe">
+  <option value="Granados">
+  <option value="Graupner">
+  <option value="Greene">
+  <option value="Greene, M.">
+  <option value="Greenleaf">
+  <option value="Gretchaninoff (Gretchaninov)">
+  <option value="Gretry">
+  <option value="Griebling">
+  <option value="Grieg">
+  <option value="Griffes">
+  <option value="Grill">
+  <option value="Grondahl">
+  <option value="Grovlez">
+  <option value="Guilmant">
+  <option value="Guion">
+  <option value="Gurlitt">
+  <option value="Hainhofer">
+  <option value="Hamelin">
+  <option value="Hand">
+  <option value="Handel">
+  <option value="Hanson">
+  <option value="Harris, R.">
+  <option value="Hartsell">
+  <option value="Harvey">
+  <option value="Haslinger">
+  <option value="Hasse">
+  <option value="Hassler">
+  <option value="Hawes">
+  <option value="Haydn">
+  <option value="Hays">
+  <option value="Heller">
+  <option value="Henkel">
+  <option value="Hewitt">
+  <option value="Hiller">
+  <option value="Hindemith">
+  <option value="Hoffmeister">
+  <option value="Hofmann">
+  <option value="Honegger">
+  <option value="Hook">
+  <option value="Horak">
+  <option value="Horvath">
+  <option value="Hovhaness">
+  <option value="Hullmandel">
+  <option value="Hummel">
+  <option value="Hunten">
+  <option value="Ibert">
+  <option value="Jacoby">
+  <option value="Janacek">
+  <option value="Jensen">
+  <option value="Joplin">
+  <option value="Kabalevsky">
+  <option value="Kalinnikov">
+  <option value="Kalmanoff">
+  <option value="Karp">
+  <option value="Kaylor">
+  <option value="Kennan">
+  <option value="Keyes">
+  <option value="Khachaturian">
+  <option value="Kiorpes">
+  <option value="Kirchner">
+  <option value="Kirnberger">
+  <option value="Klose">
+  <option value="Kodaly">
+  <option value="Kohl">
+  <option value="Kohler">
+  <option value="Kolling">
+  <option value="Komanetsky">
+  <option value="Kowalchyk & Lancaster">
+  <option value="Kozlowski">
+  <option value="Kraehenbuehl">
+  <option value="Krause">
+  <option value="Krebs">
+  <option value="Krenek">
+  <option value="Krentzlin">
+  <option value="Kress">
+  <option value="Krieger">
+  <option value="Krieger, J.">
+  <option value="Krieger, K.">
+  <option value="Kuhlau">
+  <option value="Kuhnau">
+  <option value="Kullak">
+  <option value="Kunz">
+  <option value="Kutnowski">
+  <option value="Lacerda">
+  <option value="Ladukhin">
+  <option value="LaMontaine">
+  <option value="Landowska">
+  <option value="Lanner">
+  <option value="Latour">
+  <option value="Lau">
+  <option value="Le Couppey">
+  <option value="Leaf">
+  <option value="Lees">
+  <option value="Lemoine">
+  <option value="Leo">
+  <option value="Li, Chen">
+  <option value="Liadov">
+  <option value="Lichner">
+  <option value="Liebermann">
+  <option value="Linn">
+  <option value="Liszt">
+  <option value="Loeillet">
+  <option value="Loeschhorn">
+  <option value="Lohlein">
+  <option value="Low">
+  <option value="Lublin">
+  <option value="Lully">
+  <option value="Lutoslawski">
+  <option value="Lynes">
+  <option value="MacDowell">
+  <option value="Machavariani">
+  <option value="Mahle">
+  <option value="Martin">
+  <option value="Martini">
+  <option value="Martinu">
+  <option value="Martyska">
+  <option value="Massoud">
+  <option value="Matz">
+  <option value="Mayer">
+  <option value="Maykapar">
+  <option value="McKay">
+  <option value="McLean">
+  <option value="Melartin">
+  <option value="Mendelssohn">
+  <option value="Mendelssohn, Fanny">
+  <option value="Mennin">
+  <option value="Menotti">
+  <option value="Merkel">
+  <option value="Miaskovsky">
+  <option value="Mier">
+  <option value="Mignone">
+  <option value="Milhaud">
+  <option value="Miller">
+  <option value="Mompou">
+  <option value="Montgomery">
+  <option value="Moore">
+  <option value="Morley">
+  <option value="Morovsky">
+  <option value="Moszkowski">
+  <option value="Mouret">
+  <option value="Mozart">
+  <option value="Mozart, L.">
+  <option value="Mrozinski">
+  <option value="Muczynski">
+  <option value="Muffat">
+  <option value="Muller">
+  <option value="Mussorgsky">
+  <option value="Myslivecek">
+  <option value="Nazareth">
+  <option value="Neefe">
+  <option value="Neufville">
+  <option value="Niamath">
+  <option value="Nielsen">
+  <option value="Ninov">
+  <option value="Nobre">
+  <option value="Noona">
+  <option value="Normiger">
+  <option value="Norton">
+  <option value="O’Hearn">
+  <option value="Oesten">
+  <option value="Ogilvy">
+  <option value="Oginski">
+  <option value="Olson">
+  <option value="Olson / McLean">
+  <option value="Olson, K.">
+  <option value="Olson, L.F.">
+  <option value="Pachelbel">
+  <option value="Pachulski">
+  <option value="Paderewski">
+  <option value="Palmgren">
+  <option value="Paradies">
+  <option value="Paradisi">
+  <option value="Parker">
+  <option value="Parusinov">
+  <option value="Pasquini">
+  <option value="Pearce">
+  <option value="Peeters, F.">
+  <option value="Pepusch">
+  <option value="Perdew">
+  <option value="Perry">
+  <option value="Persichetti">
+  <option value="Pescetti">
+  <option value="Petzold (Pezold)">
+  <option value="Petzold (Pezold) / Bach, J.S.">
+  <option value="Peuerl">
+  <option value="Piazzolla">
+  <option value="Pieczonka">
+  <option value="Pinto">
+  <option value="Playford">
+  <option value="Pleyel">
+  <option value="Poe">
+  <option value="Poldini">
+  <option value="Poulenc">
+  <option value="Praetorius">
+  <option value="Prokofiev">
+  <option value="Purcell">
+  <option value="Rachmaninoff (Rachmaninov)">
+  <option value="Rahbee">
+  <option value="Rakov">
+  <option value="Rameau">
+  <option value="Rathgeber">
+  <option value="Ravel">
+  <option value="Razorenov">
+  <option value="Rea">
+  <option value="Rebikoff (Rebikov)">
+  <option value="Reger">
+  <option value="Reichardt">
+  <option value="Reinagle">
+  <option value="Reinecke">
+  <option value="Reinhold">
+  <option value="Rejino">
+  <option value="Reubart">
+  <option value="Rhene-Baton">
+  <option value="Ricci">
+  <option value="Ricker & Glover">
+  <option value="Robinson">
+  <option value="Rocherolle">
+  <option value="Rodrigo">
+  <option value="Rodriguez">
+  <option value="Rohde">
+  <option value="Rollin">
+  <option value="Rossi">
+  <option value="Roubos">
+  <option value="Rousseau">
+  <option value="Rowley">
+  <option value="Rubbach">
+  <option value="Ryba">
+  <option value="Saint-Luc">
+  <option value="Sallee">
+  <option value="Salutrinskaya">
+  <option value="Sanderson">
+  <option value="Santoro">
+  <option value="Sartorio">
+  <option value="Satie">
+  <option value="Scarlatti">
+  <option value="Scarlatti, A.">
+  <option value="Scarlatti, D.">
+  <option value="Schale">
+  <option value="Schein">
+  <option value="Schmitt">
+  <option value="Schmitz">
+  <option value="Schoenberg">
+  <option value="Scholze">
+  <option value="Schonthal">
+  <option value="Schubert">
+  <option value="Schultz">
+  <option value="Schuman, W.">
+  <option value="Schumann">
+  <option value="Schumann, C.">
+  <option value="Schytte">
+  <option value="Scott">
+  <option value="Scriabin">
+  <option value="Seiber">
+  <option value="Seixas">
+  <option value="Sessions">
+  <option value="Setliff">
+  <option value="Shostakovich">
+  <option value="Shott">
+  <option value="Sibelius">
+  <option value="Siegmeister">
+  <option value="Sifford">
+  <option value="Smetana">
+  <option value="Snell">
+  <option value="Sochting">
+  <option value="Soler">
+  <option value="Speer">
+  <option value="Sperontes (Scholze)">
+  <option value="Spindler">
+  <option value="Springer">
+  <option value="Stanley">
+  <option value="Starer">
+  <option value="Stecher & Horowitz & Gordon">
+  <option value="Steibelt">
+  <option value="Stevens, E.">
+  <option value="Stolzel">
+  <option value="Stravinsky">
+  <option value="Stravinsky, S.">
+  <option value="Streabbog">
+  <option value="Streibelt">
+  <option value="Strommen">
+  <option value="Stulzel">
+  <option value="Sugar">
+  <option value="Sung, S.">
+  <option value="Susato">
+  <option value="Sweelinck">
+  <option value="Szymanowska">
+  <option value="Szymanowski">
+  <option value="Tan">
+  <option value="Tansman">
+  <option value="Tarrega">
+  <option value="Taylor">
+  <option value="Tchaikovsky (Tchiakovsky)">
+  <option value="Tcherepnin">
+  <option value="Telemann">
+  <option value="Thompson, R.">
+  <option value="Thomson, V.">
+  <option value="Tingley">
+  <option value="Tischer">
+  <option value="Toch">
+  <option value="Torjussen">
+  <option value="Tsitsaros">
+  <option value="Turina">
+  <option value="Turk">
+  <option value="van den Hove">
+  <option value="Vandall">
+  <option value="Vanhal">
+  <option value="Vasiliev">
+  <option value="Villa-Lobos">
+  <option value="Vogel">
+  <option value="Volkmann">
+  <option value="von der Hofe">
+  <option value="Von Paradis">
+  <option value="Vorisek">
+  <option value="Wagenseil">
+  <option value="Walther">
+  <option value="Weber">
+  <option value="Webern">
+  <option value="Weise">
+  <option value="Wermel">
+  <option value="Widmann">
+  <option value="Wilton">
+  <option value="Witthauer">
+  <option value="Wohlfahrt">
+  <option value="Wolf">
+  <option value="Ziller">
+  <option value="Zipoli">
+</datalist>
+
+
+<datalist id="collections">
+  <option value="...And All That Jazz, Vol. 2">
+  <option value="...And All That Jazz, Vol. 3">
+  <option value="3 Ghost Rags">
+  <option value="7 Easy Piano Pieces">
+  <option value="A Day in the Forest">
+  <option value="A Day in the Jungle">
+  <option value="A Day to Play">
+  <option value="A Perfect Ten, Book 2">
+  <option value="A Splash of Color, Book 3">
+  <option value="A Trip Through the Rainforest">
+  <option value="Accent on Gillock, Vol. 1">
+  <option value="Accent on Gillock, Vol. 2">
+  <option value="Accent on Gillock, Vol. 3">
+  <option value="Accent on Gillock, Vol. 4">
+  <option value="Accent on Gillock, Vol. 5">
+  <option value="Accent on Gillock, Vol. 6">
+  <option value="Accent on Gillock, Vol. 7">
+  <option value="Accent on Gillock, Vol. 8">
+  <option value="Accent on Rhythm & Style">
+  <option value="Accents Around the World">
+  <option value="Album for the Young, Op. 140">
+  <option value="American Impressions">
+  <option value="American Kaleidoscope">
+  <option value="An Introduction to Classics to Moderns">
+  <option value="At the Seashore, Vol. 1">
+  <option value="Audience Pleasers, Book 1">
+  <option value="Audience Pleasers, Book 2">
+  <option value="Audience Pleasers, Book 3">
+  <option value="Bagatelles, Vol. 1">
+  <option value="Bagatelles, Vol. 2">
+  <option value="Beginning Piano Solos, No. 101">
+  <option value="Beginning Sonatinas">
+  <option value="Beyond the Romantic Spirit, Book 1">
+  <option value="Beyond the Romantic Spirit, Book 2">
+  <option value="Bravo! Book 1">
+  <option value="Carnival">
+  <option value="Catherine Rollin’s Favorite Solos, Book 2">
+  <option value="Catherine Rollin’s Favorite Solos, Book 3">
+  <option value="Celebrate America!, Book 1">
+  <option value="Celebrate America!, Book 2">
+  <option value="Celebrated Lyrical Solos, Book 1">
+  <option value="Celebrated Lyrical Solos, Book 2">
+  <option value="Celebrated Lyrical Solos, Book 3">
+  <option value="Celebrated Lyrical Solos, Book 4">
+  <option value="Celebrated Lyrical Solos, Book 5">
+  <option value="Celebrated Piano Solos, Book 1">
+  <option value="Celebrated Piano Solos, Book 2">
+  <option value="Celebrated Piano Solos, Book 3">
+  <option value="Celebrated Piano Solos, Book 4">
+  <option value="Celebrated Piano Solos, Book 5">
+  <option value="Celebrated Virtuosic Solos, Book 1">
+  <option value="Celebrated Virtuosic Solos, Book 2">
+  <option value="Celebrated Virtuosic Solos, Book 3">
+  <option value="Celebrated Virtuosic Solos, Book 4">
+  <option value="Celebrated Virtuosic Solos, Book 5">
+  <option value="Children's Festival">
+  <option value="Circus Suite">
+  <option value="Classic Piano Repertoire - Gillock">
+  <option value="Classic Piano Solos, No. 131">
+  <option value="Classics Alive! Book 1">
+  <option value="Classics Alive! Book 2">
+  <option value="Classics Alive! Book 3">
+  <option value="Classics to Moderns, Vol. 37">
+  <option value="Classics/Romantics/Moderns, No. 102">
+  <option value="Color Me Jazz, Book 1">
+  <option value="Contemporary Piano Literature, Book 1">
+  <option value="Contemporary Piano Literature, Book 2">
+  <option value="Contemporary Piano Literature, Book 3">
+  <option value="Contemporary Piano Literature, Book 4">
+  <option value="Cuatro Rumores Hispanicos">
+  <option value="Dances and Daydreams">
+  <option value="Dances from Around the World">
+  <option value="Dancing on the Keys, Book 1">
+  <option value="Discovering Piano Literature, Book 1">
+  <option value="Discovering Piano Literature, Book 2">
+  <option value="Discovering Piano Literature, Book 3">
+  <option value="Early Advanced Classics to Moderns, Vol. 47">
+  <option value="Easy Classics to Moderns, Vol. 17">
+  <option value="Eight Sound Poems">
+  <option value="Enchanted Forest">
+  <option value="Encore!, Book 1">
+  <option value="Encore!, Book 2">
+  <option value="Encore!, Book 3">
+  <option value="Especially in Romantic Style, Book 1">
+  <option value="Especially in Romantic Style, Book 2">
+  <option value="Especially in Romantic Style, Book 3">
+  <option value="Essential Keyboard Repertoire, Vol. 1">
+  <option value="Essential Keyboard Repertoire, Vol. 2">
+  <option value="Essential Keyboard Repertoire, Vol. 3 (Sonatinas)">
+  <option value="Essential Keyboard Repertoire, Vol. 4">
+  <option value="Essential Keyboard Repertoire, Vol. 5 (Hand span of Octave or less)">
+  <option value="Essential Keyboard Repertoire, Vol. 6">
+  <option value="Essential Keyboard Repertoire, Vol. 7">
+  <option value="Everybody’s Perfect Masterpieces, Vol. 1">
+  <option value="Everybody’s Perfect Masterpieces, Vol. 2">
+  <option value="Everybody’s Perfect Masterpieces, Vol. 3">
+  <option value="Everybody’s Perfect Masterpieces, Vol. 4">
+  <option value="Exploring More Piano Literature">
+  <option value="Exploring Piano Classics - Repertoire, Level 1">
+  <option value="Exploring Piano Classics - Repertoire, Level 2">
+  <option value="Exploring Piano Classics - Repertoire, Level 3">
+  <option value="Exploring Piano Classics - Repertoire, Level 4">
+  <option value="Exploring Piano Classics - Repertoire, Level 5">
+  <option value="Exploring Piano Classics - Repertoire, Preparatory">
+  <option value="Exploring Piano Literature">
+  <option value="Fables: Nine Pieces for the Young, Op. 21">
+  <option value="Favorite Classics, Book 2">
+  <option value="Favorite Solos, Book 3">
+  <option value="First Jazz Suite">
+  <option value="First Lyric Pieces">
+  <option value="First Steps in Keyboard Literature">
+  <option value="Five Piano Pieces">
+  <option value="Four Piano Blues">
+  <option value="Four Seasonal Pieces">
+  <option value="Garden Treasures">
+  <option value="Gargoyles">
+  <option value="Gershwin at the Keyboard">
+  <option value="Grand Solos for Piano, Book 2">
+  <option value="Grand Solos for Piano, Book 2">
+  <option value="Grand Solos for Piano, Book 4">
+  <option value="Grand Solos for Piano, Book 5">
+  <option value="Grandfather's Book, Op 119">
+  <option value="Gumshoes - Piano Pieces for Jazz Detectives">
+  <option value="Happy Time, Book 1">
+  <option value="Happy Time, Book 3">
+  <option value="Hungarian Children's Songs for Piano">
+  <option value="I Remember Gurlitt, Book 1">
+  <option value="I Remember Gurlitt, Book 2">
+  <option value="Images">
+  <option value="Images of Spain">
+  <option value="In the Key of Jazz, Book 1">
+  <option value="In the Key of Jazz, Book 2">
+  <option value="Jazz & Blues, Op. 37, Book 1">
+  <option value="Jazz & Blues, Op. 37, Book 2">
+  <option value="Jazz & Blues, Op. 37, Book 3">
+  <option value="Jazz Bits">
+  <option value="Jazz Connection, Book 1">
+  <option value="Jazz Connection, Book 2">
+  <option value="Jazz Connection, Book 3">
+  <option value="Jazz Delights">
+  <option value="Jazz Fest">
+  <option value="Jazz Gems">
+  <option value="Jazz Starters">
+  <option value="Jazz Starters II">
+  <option value="Jazz Starters II">
+  <option value="Jazz Starters III">
+  <option value="Jazz-a-Little Jazz-A-Lot, Book 1">
+  <option value="Jazz-a-Little, Jazz-a-Lot, Book 2">
+  <option value="Jazz, Rags & Blues, Book 1">
+  <option value="Jazz, Rags & Blues, Book 2">
+  <option value="Jazz, Rags & Blues, Book 3">
+  <option value="Jazz, Rags & Blues, Book 4">
+  <option value="Jazz, Rags and Blues, Book 5">
+  <option value="Jazzed Up! Folk Songs">
+  <option value="Joy of Classics">
+  <option value="Just For Fun">
+  <option value="Just for Fun, Book 1">
+  <option value="Just for Fun, Book 2">
+  <option value="Just for You, Book 1">
+  <option value="Just for You, Book 2">
+  <option value="Just Imagine! Book 1">
+  <option value="Kaleidoscope Solos, Book 2">
+  <option value="Kaleidoscope Solos, Book 3">
+  <option value="Kaleidoscope Solos, Book 4">
+  <option value="Kaleidoscope Solos, Book 5">
+  <option value="Keyboard Capers">
+  <option value="Keys to Artistic Performance, Book 1">
+  <option value="Keys to Artistic Performance, Book 2">
+  <option value="Keys to Artistic Performance, Book 3">
+  <option value="Keystrokes">
+  <option value="Keystrokes">
+  <option value="Les Petites Images">
+  <option value="Les Petites Impressions">
+  <option value="Lyric Ballads">
+  <option value="Lyric Pieces">
+  <option value="Lyric Preludes in Romantic Style">
+  <option value="Martha Mier’s Favorite Solos, Book 2">
+  <option value="Martha Mier’s Favorite Solos, Book 3">
+  <option value="Masterpieces with Flair! Book 1">
+  <option value="Masterpieces with Flair! Book 2">
+  <option value="Masterpieces with Flair! Book 3">
+  <option value="Masterwork Classics, Level 10">
+  <option value="Masterwork Classics, Level 3">
+  <option value="Masterwork Classics, Level 4">
+  <option value="Masterwork Classics, Level 5">
+  <option value="Masterwork Classics, Level 6">
+  <option value="Masterwork Classics, Level 7">
+  <option value="Masterwork Classics, Level 8">
+  <option value="Masterwork Classics, Level 9">
+  <option value="Masterwork Classics, Levels 1-2">
+  <option value="Meanwhile, Back at the Castle">
+  <option value="Melodious Masterpieces, Book 3">
+  <option value="Menagerie">
+  <option value="Miniatures, Book 2">
+  <option value="Miniatures, Book 3">
+  <option value="Minor Masters, Book 1">
+  <option value="Modern Masterworks, Book 2">
+  <option value="Modern Masterworks, Vol. 1">
+  <option value="Momentos">
+  <option value="More Classics/Romantics/Moderns, No. 103">
+  <option value="More Easy Classics to Moderns, Vol. 27">
+  <option value="More New Orleans Jazz Styles">
+  <option value="More Solo Souvenirs">
+  <option value="Musica Latina, Book 1">
+  <option value="Musica Latina, Book 2">
+  <option value="Musical Snapshots, Book 1">
+  <option value="Musical Treasures">
+  <option value="Musical Treasures, Vol. 1">
+  <option value="My Kind of Music, Book 2">
+  <option value="My Kind of Music, Book 3">
+  <option value="My Kind of Music, Book 4">
+  <option value="Myths & Magic">
+  <option value="New Orleans Jazz Styles">
+  <option value="Nightworks">
+  <option value="Nostalgic Waltzes">
+  <option value="On Your Way to Succeeding with the Masters">
+  <option value="Once Upon a Rainbow, Book 3">
+  <option value="Out of this World!, Book 1">
+  <option value="Pantomimes">
+  <option value="Pentatonics for Piano Solo">
+  <option value="Piano Extravaganza, Book 1">
+  <option value="Piano Extravaganza, Book 2">
+  <option value="Piano Extravaganza, Book 3">
+  <option value="Piano Literature of the 17th, 18th, 19th Centuries, Book 2">
+  <option value="Piano Literature of the 17th, 18th, 19th Centuries, Book 3">
+  <option value="Piano Literature, Book 3">
+  <option value="Piano Literature, Book 4">
+  <option value="Piano Literature, Book 5">
+  <option value="Piano Literature, Book 6">
+  <option value="Piano Literature, Vol. 1">
+  <option value="Piano Literature, Vol. 2">
+  <option value="Piano Literature, Vol. 3">
+  <option value="Piano Literature, Vol. 4">
+  <option value="Piano Literature, Vol. 5">
+  <option value="Piano Music for Children, Vol. 1">">
+  <option value="Piano Repertoire - Level 1, Baroque & Classical
+  <option value="Piano Repertoire - Level 1, Essential Piano Repertoire (17th, 18th, 19th Centuries)">
+  <option value="Piano Repertoire - Level 1, Romantic & 20th Century">
+  <option value="Piano Repertoire - Level 2, Baroque and Classical ">
+  <option value="Piano Repertoire - Level 2, Essential Piano Repertoire (17th, 18th, 19th Centuries)">
+  <option value="Piano Repertoire - Level 2, Romantic & 20th Century">
+  <option value="Piano Repertoire - Level 3, Baroque & Classical">
+  <option value="Piano Repertoire - Level 3, Essential Piano Repertoire (17th, 18th, 19th Centuries)">
+  <option value="Piano Repertoire - Level 3, Romantic & 20th Century">
+  <option value="Piano Repertoire - Level 4, Baroque & Classical">
+  <option value="Piano Repertoire - Level 4, Essential Piano Repertoire (17th, 18th, 19th Centuries)">
+  <option value="Piano Repertoire - Level 4, Romantic & 20th Century">
+  <option value="Piano Repertoire - Level 5, Baroque & Classical">
+  <option value="Piano Repertoire - Level 5, Essential Piano Repertoire (17th, 18th, 19th Centuries)">
+  <option value="Piano Repertoire - Level 5, Romantic & 20th Century">
+  <option value="Piano Repertoire - Level 6, Baroque & Classical">
+  <option value="Piano Repertoire - Level 6, Essential Piano Repertoire (17th, 18th, 19th Centuries)">
+  <option value="Piano Repertoire - Level 6, Romantic & 20th Century">
+  <option value="Piano Repertoire - Level 7, Baroque & Classical">
+  <option value="Piano Repertoire - Level 7, Essential Piano Repertoire (17th, 18th, 19th Centuries)">
+  <option value="Piano Repertoire - Level 7, Romantic & 20th Century">
+  <option value="Piano Repertoire - Level 8, Baroque & Classical">
+  <option value="Piano Repertoire - Level 8, Essential Piano Repertoire (17th, 18th, 19th Centuries)">
+  <option value="Piano Repertoire - Level 8, Romantic & 20th Century">
+  <option value="Piano Repertoire - Level 9, Essential Piano Repertoire (17th, 18th, 19th Centuries)">
+  <option value="Piano Repertoire - Preparatory, Baroque & Classical">
+  <option value="Piano Repertoire - Preparatory, Essential Piano Repertoire (17th, 18th, 19th Centuries)">
+  <option value="Piano Repertoire - Preparatory, Romantic & 20th Century">
+  <option value="Pictures in Sound">
+  <option value="Please Feed the Animals">
+  <option value="Poemetti">
+  <option value="Poems for Piano, Vol. 2">
+  <option value="Poems for Piano, Vol. l">
+  <option value="Poetic Moments">
+  <option value="Portraits in Jazz (not, No. 1 or 2)">
+  <option value="Portraits in Style">
+  <option value="Preludes for Piano, Book 1">
+  <option value="Preludes for Piano, Book 2">
+  <option value="Preludes for Piano, Book 3">
+  <option value="Preludes in Patterns">
+  <option value="Preludes, Bk 3">
+  <option value="Preludes, Vol. 1">
+  <option value="Preludes, Vol. 2">
+  <option value="Preludes, Vol. 3">
+  <option value="Prole do Bebe, Vol. 2">
+  <option value="Reﬂections of Youth">
+  <option value="Rhythm ‘n’ Style, Book 2">
+  <option value="River Rhythms">
+  <option value="Rivers of America">
+  <option value="Road to Terpsichore">
+  <option value="Romantic Gems">
+  <option value="Romantic Impressions, Book 1">
+  <option value="Romantic Impressions, Book 2">
+  <option value="Romantic Impressions, Book 3">
+  <option value="Romantic Impressions, Book 4">
+  <option value="Romantic Rhapsodies, Book 2">
+  <option value="Romantic Sketches, Book 1">
+  <option value="Romantic Sketches, Book 2">
+  <option value="Safari">
+  <option value="Sampler, Book 1">
+  <option value="Sampler, Book 2">
+  <option value="Saudades Das Selvas Brasileiras">
+  <option value="Sea Pictures">
+  <option value="Seafarer’s Sonatina">
+  <option value="Selected Works for Piano">
+  <option value="Seven Preludes Book 1">
+  <option value="Signature Collection, Book 1">
+  <option value="Signature Collection, Book 2">
+  <option value="Signature Collection, Book 3">
+  <option value="Simply Sonatinas! Book 1">
+  <option value="Simply Sonatinas!, Book 2">
+  <option value="Six Modal Miniatures">
+  <option value="Six Sonatinas, Op. 36">
+  <option value="Soda Pop and other Delights">
+  <option value="Solo Souvenirs">
+  <option value="Something Special, Book Two">
+  <option value="Sonatina Festival">
+  <option value="Songs Without Words">
+  <option value="Sounds of Jazz, Book 1">
+  <option value="Sounds of Jazz, Book 2">
+  <option value="Souvenirs du Chateau">
+  <option value="Spotlight on Impressionist Style">
+  <option value="Spotlight on Jazz Style">
+  <option value="Still More New Orleans Jazz Styles">
+  <option value="Stories in Sound, Book 1">
+  <option value="Stories in Sound, Book 2">
+  <option value="Succeeding with the Masters: The Festival Collection, Book 1">
+  <option value="Succeeding with the Masters: The Festival Collection, Book 2">
+  <option value="Succeeding with the Masters: The Festival Collection, Book 3">
+  <option value="Succeeding with the Masters: The Festival Collection, Book 4">
+  <option value="Succeeding with the Masters: The Festival Collection, Book 5">
+  <option value="Succeeding with the Masters: The Festival Collection, Book 6">
+  <option value="Succeeding with the Masters: The Festival Collection, Book 7">
+  <option value="Succeeding with the Masters: The Festival Collection, Preparatory">
+  <option value="Supplementary Solos, Level 1">
+  <option value="Tales of Mystery">
+  <option value="The Baroque Spirit, Book 1">
+  <option value="The Baroque Spirit, Book 2">
+  <option value="The Best of Catherine Rollin, Book 1">
+  <option value="The Best of Catherine Rollin, Book 2">
+  <option value="The Best of Dennis Alexander, Book 1">
+  <option value="The Best of Dennis Alexander, Book 2">
+  <option value="The Best of Kevin Olson, Book 1">
+  <option value="The Best of Kevin Olson, Book 2">
+  <option value="The Best of Margaret Goldston, Book 2">
+  <option value="The Best of Martha Mier, Book 2">
+  <option value="The Best of Martha Mier, Book 3">
+  <option value="The Best of Melody Bober, Book 1">
+  <option value="The Best of Melody Bober, Book 2">
+  <option value="The Best of Timothy Brown, Book 1">
+  <option value="The Best of Timothy Brown, Book 2">
+  <option value="The Christmas Tree">
+  <option value="The Classical Spirit, Book 1">
+  <option value="The Classical Spirit, Book 2">
+  <option value="The Developing Artist - Piano Literature, Book 1">
+  <option value="The Developing Artist - Piano Literature, Book 2">
+  <option value="The Developing Artist - Piano Literature, Book 3">
+  <option value="The Developing Artist - Piano Literature, Book 4">
+  <option value="The Developing Artist - Piano Literature, Preparatory">
+  <option value="The Joy of First Classics, Book 1">
+  <option value="The Joy of First Classics, Book 2">
+  <option value="The Romantic Spirit, Book 1">
+  <option value="The Romantic Spirit, Book 2">
+  <option value="Three Landler">
+  <option value="Three Love Songs">
+  <option value="Three Miniatures">
+  <option value="Three Piano Pieces, Op. 11">
+  <option value="Tunes for a Rainy Day">
+  <option value="Valses Poeticos">
+  <option value="Vuelvo al sur: 10 Tangos and Other Pieces">
+  <option value="Young People’s Album, Op. 36">
+  <option value="Suzuki">
+</datalist>
+
+
+<datalist id="editors">
+  <option value="Agay">
+  <option value="Bachus">
+  <option value="Bastien">
+  <option value="Bigler & Lloyd-Watts">
+  <option value="Clarﬁeld & Alexander">
+  <option value="Clark">
+  <option value="Dietzer">
+  <option value="Faber">
+  <option value="Hinson/Olson">
+  <option value="Lancaster & Renfrow">
+  <option value="Magrath">
+  <option value="Marlais">
+  <option value="Olson, L.F.">
+  <option value="Sheftel">
+  <option value="Snell">
+</datalist>
+
+
+</html>
